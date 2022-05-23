@@ -9,4 +9,10 @@
 </template>
 
 <style>
+html{
+  background-color: #ffe766;
+}
+*{
+  margin: 0;
+}
 </style>
