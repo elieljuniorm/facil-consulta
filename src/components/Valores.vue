@@ -9,9 +9,10 @@
         <b-form-input id="inline-form-input-username" placeholder="Valor"></b-form-input>
       </b-input-group>
 
-      <Botao />
       <Pagamento />
       <Parcelamento/>
+
+      <Botao rota="/"/>
     </b-form>
   </div>
 </template>

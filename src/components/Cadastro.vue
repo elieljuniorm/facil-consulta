@@ -27,7 +27,7 @@
 
       <Progess />
 
-      <Botao />
+      <Botao rota="/atendimento"/>
 
     </b-form>
     <b-card class="mt-3" header="Form Data Result">
