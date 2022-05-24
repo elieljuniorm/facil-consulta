@@ -25,7 +25,10 @@
         <b-form-select id="input-5" v-model="form.cidade" :options="cidades" required></b-form-select>
       </b-form-group>
 
-      <Progess :etapa="1" />
+      <div>
+        <Progess :etapa="1" />
+        <span>1 de 2</span>
+      </div>
 
       <Botao rota="/atendimento" label="PRÓXIMO" />
 

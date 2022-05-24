@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Botao rota="/" label="<" />
     <b-form inline>
 
       <Especialiades />
@@ -10,9 +11,19 @@
       </b-input-group>
 
       <Pagamento />
+
       <Parcelamento />
-      <Progess :etapa="2" />
+
+      <div>
+        
+        <Progess :etapa="2" />
+
+        <span>2 de 2</span>
+
+      </div>
+
       <Botao rota="/" label="PRÓXIMO" />
+
     </b-form>
   </div>
 </template>
