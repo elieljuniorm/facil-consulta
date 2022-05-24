@@ -1,5 +1,16 @@
 <template>
   <div>
-    <h1>This is an about page</h1>
+    <Valores/>
   </div>
 </template>
+
+<script>
+import Valores from '@/components/Valores.vue'
+
+export default {
+  name: 'Home',
+  components: {
+  Valores
+  }
+}
+</script>
