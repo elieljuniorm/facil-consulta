@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Valores/>
+    <Valores />
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import Valores from '@/components/Valores.vue'
 export default {
   name: 'Home',
   components: {
-  Valores
+    Valores
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-button type="submit" variant="primary">
-            <router-link :to="rota">PRÓXIMO</router-link>
+            <router-link :to="rota">{{label}}</router-link>
         </b-button>
     </div>
 </template>
@@ -10,6 +10,9 @@ export default {
     name: 'Botao',
     props: {
         rota: {
+            type: String
+        },
+        label:{
             type: String
         }
     }

@@ -1,15 +1,17 @@
 <template>
-    <b-progress :value="value" :max="max" class="mb-3"></b-progress>
+    <b-progress :value="etapa" :max="2" class="mb-3"></b-progress>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            value: 1,
-            max: 2
+     name: 'Progess',
+     props:
+    {
+        etapa: {
+            type: Number,
         }
     }
+    
 }
 </script>
 

@@ -10,9 +10,9 @@
       </b-input-group>
 
       <Pagamento />
-      <Parcelamento/>
-
-      <Botao rota="/"/>
+      <Parcelamento />
+      <Progess :etapa="2" />
+      <Botao rota="/" label="PRÓXIMO" />
     </b-form>
   </div>
 </template>
@@ -22,19 +22,22 @@ import Botao from '@/components/Botao.vue';
 import Pagamento from '@/components/Pagamento.vue';
 import Especialiades from './Especialiades.vue';
 import Parcelamento from './Parcelamento.vue';
+import Progess from './Progess.vue';
 
 export default {
   components: {
     Botao,
     Pagamento,
+    Progess,
     form: {
-        especialidade: null,
-        checked: []
+      especialidade: null,
+      checked: []
     },
     especialidades: [{ text: "Selecione", value: null }, "Carrots", "Beans", "Tomatoes", "Corn"],
     show: true,
     Especialiades,
-    Parcelamento
-}
+    Parcelamento,
+    Progess
+  }
 }
 </script>

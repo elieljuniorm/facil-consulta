@@ -25,9 +25,9 @@
         <b-form-select id="input-5" v-model="form.cidade" :options="cidades" required></b-form-select>
       </b-form-group>
 
-      <Progess />
+      <Progess :etapa="1" />
 
-      <Botao rota="/atendimento"/>
+      <Botao rota="/atendimento" label="PRÓXIMO" />
 
     </b-form>
     <b-card class="mt-3" header="Form Data Result">

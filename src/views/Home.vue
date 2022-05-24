@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Cadastro class="conteudo"/>
+    <Cadastro class="conteudo" />
   </div>
 </template>
 
