@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Botao rota="/" label="<" />
+    <Botao rota="/" label="<" class="botaoSeta" />
     <b-form inline>
 
       <Especialiades />
@@ -14,7 +14,7 @@
 
 
       <div>
-        
+
         <Progess :etapa="2" />
 
         <span>2 de 2</span>
@@ -49,3 +49,5 @@ export default {
   }
 }
 </script>
+
+

@@ -9,7 +9,7 @@
 </template>
 
 <style>
-html{
+html body{
   background-color: #ffe766;
 }
 *{
