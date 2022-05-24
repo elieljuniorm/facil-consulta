@@ -12,7 +12,6 @@
 
       <Pagamento />
 
-      <Parcelamento />
 
       <div>
         
@@ -32,7 +31,6 @@
 import Botao from '@/components/Botao.vue';
 import Pagamento from '@/components/Pagamento.vue';
 import Especialiades from './Especialiades.vue';
-import Parcelamento from './Parcelamento.vue';
 import Progess from './Progess.vue';
 
 export default {
@@ -47,7 +45,6 @@ export default {
     especialidades: [{ text: "Selecione", value: null }, "Carrots", "Beans", "Tomatoes", "Corn"],
     show: true,
     Especialiades,
-    Parcelamento,
     Progess
   }
 }

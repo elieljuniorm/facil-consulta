@@ -6,20 +6,23 @@
                 {{ option.text }}
             </b-form-checkbox>
         </b-form-group>
+        <Parcelamento :visivel="selected == 'cartao'"/>
     </div>
 </template>
 
 <script>
+import Parcelamento from './Parcelamento.vue'
 export default {
     data() {
         return {
-            selected: [], // Must be an array reference!
+            selected: [],
             options: [
-                { text: 'Dinheiro', value: 'dinheiro' },
-                { text: 'PIX', value: 'pix' },
-                { text: 'Cartão', value: 'cartao' }
+                { text: "Dinheiro", value: "dinheiro" },
+                { text: "PIX", value: "pix" },
+                { text: "Cartão", value: "cartao" }
             ]
-        }
-    }
+        };
+    },
+    components: { Parcelamento }
 }
 </script>
