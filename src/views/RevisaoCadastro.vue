@@ -1,14 +1,15 @@
 <template>
     <div class="revisaoCadastro">
         <BotaoSeta rota="/atendimento" label="<" />
-        <h1>Revisado</h1>
+        <Revisao/>
     </div>
 </template>
 
 <script>
 import BotaoSeta from "@/components/BotaoSeta.vue";
+import Revisao from "@/components/Revisao.vue";
 export default {
-    components: { BotaoSeta },
+    components: { BotaoSeta, Revisao },
 };
 </script>
 

@@ -21,7 +21,7 @@
   --cor-letra: #282828;
   --cor-select: #8a8a8a;
   --cor-sombra: #b9b9b9;
-  --cor-botao-cadastro: #fbde40
+  --cor-botao-cadastro: #fbde40;
 }
 
 html body{
