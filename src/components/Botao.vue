@@ -21,6 +21,7 @@ export default {
 <style scoped>
 .container {
     display: grid;
+    padding-bottom: 2em;
 }
 
 .btn.btn-primary,

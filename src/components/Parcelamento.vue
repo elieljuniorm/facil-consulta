@@ -43,7 +43,8 @@ export default {
     margin: -1.2em 0 1em 0;
     padding: 1em 6.5em;
 }
-.descricao{
+
+.descricao {
     padding: 0 1.2em;
 }
 </style>

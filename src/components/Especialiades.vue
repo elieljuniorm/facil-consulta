@@ -33,7 +33,7 @@ export default {
 }
 .selectIten{
   width: 100%;
-  height: 2.5em;
+  height: 3em;
   border-radius: 5px;
   border: 2px solid;
   border-color: var(--cor-letra-titulo);

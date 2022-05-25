@@ -95,7 +95,7 @@ export default {
   border-end-start-radius: 5px;
   border-right: unset;
   width: 2.8em;
-  height: 2.7em
+  height: 3.3em
 }
 
 .campoValor {
@@ -109,7 +109,7 @@ export default {
 
 .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
   margin: 2px 0px 0px -4px;
-  height: 39px;
+  height: 3em;
 }
 .containerProgess {
   display: grid;
