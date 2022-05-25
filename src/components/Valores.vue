@@ -44,6 +44,9 @@ export default {
     Botao,
     Pagamento,
     Progess,
+    Especialiades,
+    Progess,
+    BotaoSeta,
     form: {
       especialidade: null,
       checked: [],
@@ -56,9 +59,6 @@ export default {
       "Corn",
     ],
     show: true,
-    Especialiades,
-    Progess,
-    BotaoSeta,
   },
 };
 </script>
