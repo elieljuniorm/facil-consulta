@@ -29,5 +29,6 @@ export default {
 a{
     color: #483698;
     text-decoration: unset;
+    font-family: var(--fonte-padrao-conforta);
 }
 </style>

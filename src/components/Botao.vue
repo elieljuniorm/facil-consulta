@@ -33,7 +33,7 @@ export default {
 a {
     color: #ffff;
     text-decoration: unset;
-    font-family: var(--fonte-padrao-open);
+    font-family: var(--fonte-padrao-conforta);
     font-weight: 400;
     font-size: 1.2em;
 }

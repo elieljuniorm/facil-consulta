@@ -156,7 +156,7 @@ export default {
 }
 
 .spanProgress {
-  font-family: var(--fonte-padrao-conforta);
+  font-family: var(--fonte-padrao-open);
   font-weight: bold;
   font-size: 1.2em;
   color: var(--cor-letra-titulo);
