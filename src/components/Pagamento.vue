@@ -10,12 +10,6 @@
 
             </b-form-checkbox>
 
-            <div class="selectIten">
-                <b-form-checkbox  :v-model="selected">
-                    <option value="cartao" class="spanText">Cartão</option>
-                </b-form-checkbox>
-            </div>
-
         </b-form-group>
 
         <Parcelamento :visivel="selected == 'cartao'" />
@@ -32,8 +26,8 @@ export default {
             selected: [],
             options: [
                 { text: "Em dinheiro", value: "dinheiro" },
-                { text: "Pix", value: "pix" }/* ,
-                { text: "Cartão de crédito", value: "cartao" } */
+                { text: "Pix", value: "pix" },
+                { text: "Cartão de crédito", value: "cartao" }
             ]
         };
     },
