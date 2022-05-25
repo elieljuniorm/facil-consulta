@@ -7,7 +7,7 @@
 </template>
 <script>
 export default {
-    name: 'Botao',
+    name: 'BotaoSeta',
     props: {
         rota: {
             type: String
@@ -21,13 +21,13 @@ export default {
 <style scoped>
 .btn.btn-primary,
 .btn.btn-primary:hover{
-  background-color: #483698;
+  background-color: unset;
   border-color: unset;
-  border-radius: 40px;
-  
+  border: none;
+  margin-top: -8em;
 }
 a{
-    color: #ffff;
+    color: #483698;
     text-decoration: unset;
 }
 </style>
