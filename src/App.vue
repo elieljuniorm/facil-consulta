@@ -19,7 +19,8 @@
   --cor-letra-fundo: #ffe766;
   --cor-letra-danger: #dc3545;
   --cor-letra: #282828;
-  --cor-select: #8a8a8a
+  --cor-select: #8a8a8a;
+  --cor-sombra: #b9b9b9;
 
 }
 

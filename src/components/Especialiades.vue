@@ -1,7 +1,7 @@
 <template>
     <div class="conteinerEspecialidade">
         <div class="mt-3">Especialidade principal*</div>
-        <b-form-select v-model="selected" :options="options" class="selectIten"></b-form-select>
+        <b-form-select v-model="selected" :options="options" required class="selectIten"></b-form-select>
     </div>
 </template>
 

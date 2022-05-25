@@ -12,7 +12,7 @@
 
       <label class="sr-only" for="inline-form-input-username">Informe o preço da consulta*</label>
       <b-input-group prepend="R$" class="mb-2 mr-sm-2 mb-sm-0 grupoValor">
-        <b-form-input id="inline-form-input-username" type="number" placeholder="Valor" class="campoValor">
+        <b-form-input id="inline-form-input-username" type="number" placeholder="Valor" required class="campoValor">
         </b-form-input>
       </b-input-group>
 
