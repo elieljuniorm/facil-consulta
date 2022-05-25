@@ -9,10 +9,8 @@
                 <span class="spanText">{{ option.text }}</span>
 
             </b-form-checkbox>
-
+            <Parcelamento :visivel="selected == 'cartao'" />
         </b-form-group>
-
-        <Parcelamento :visivel="selected == 'cartao'" />
 
     </div>
 

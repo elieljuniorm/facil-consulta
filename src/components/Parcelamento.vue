@@ -37,9 +37,10 @@ export default {
 <style scoped>
 .selectIten {
     background: #F9F9F9;
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     box-shadow: 1px 1px 1px 0px var(--cor-sombra);
-    margin: 0em 0 1em 0;
+    margin: -1.2em 0 1em 0;
     padding: 1em 3em;
 }
 </style>
