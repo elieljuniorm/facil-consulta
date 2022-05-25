@@ -12,18 +12,18 @@
 
       <label class="sr-only" for="inline-form-input-username">Informe o preço da consulta*</label>
       <b-input-group prepend="R$" class="mb-2 mr-sm-2 mb-sm-0 grupoValor">
-        <b-form-input id="inline-form-input-username" placeholder="Valor" class="campoValor"></b-form-input>
+        <b-form-input id="inline-form-input-username" type="number" placeholder="Valor" class="campoValor">
+        </b-form-input>
       </b-input-group>
 
       <Pagamento />
 
-      <div>
-        <Progess :etapa="2" />
-
-        <span>2 de 2</span>
+      <div class="containerProgess">
+        <Progess :etapa="2" class="progressBarra" />
+        <span class="spanProgress">2 de 2</span>
       </div>
 
-      
+
     </b-form>
     <Botao rota="/finalizado" label="PRÓXIMO" />
   </div>
@@ -80,10 +80,13 @@ export default {
   font-weight: 500;
   padding-bottom: 1em;
 }
-.grupoValor{
+
+.grupoValor {
   padding: .5em 0;
+  width: 18em;
 }
-.input-group-text{
+
+.input-group-text {
   color: #ffff;
   background-color: var(--cor-letra-titulo);
   font-weight: bold;
@@ -94,8 +97,8 @@ export default {
   width: 2.8em;
   height: 2.7em
 }
-.campoValor{
-  width: 10em;
+
+.campoValor {
   border: 2px solid;
   border-radius: 5px;
   border-left: unset;
@@ -103,9 +106,32 @@ export default {
   background-color: unset;
   color: var(--cor-select);
 }
-.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback){
+
+.input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
   margin: 2px 0px 0px -4px;
-  padding: 10px 10px 10px 10px;
   height: 39px;
+}
+.containerProgess {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: end;
+  align-items: center;
+  padding: 1em;
+}
+
+#app>div>div>form>div.containerProgess>div {
+  margin: 0 !important;
+}
+
+.progressBarra {
+  width: 20em;
+}
+
+.spanProgress {
+  font-family: var(--fonte-padrao-open);
+  font-weight: bold;
+  font-size: 1.2em;
+  color: var(--cor-letra-titulo);
+  padding-left: 1em;
 }
 </style>
