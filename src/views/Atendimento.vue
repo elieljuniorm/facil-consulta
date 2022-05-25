@@ -1,16 +1,19 @@
 <template>
   <div class="atendimento">
+    <BotaoSeta rota="/" label="<" />
     <Valores />
   </div>
 </template>
 
 <script>
 import Valores from '@/components/Valores.vue'
+import BotaoSeta from "@/components/BotaoSeta.vue";
 
 export default {
   name: 'Home',
   components: {
-    Valores
+    Valores,
+    BotaoSeta
   }
 }
 </script>

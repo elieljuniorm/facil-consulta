@@ -1,7 +1,5 @@
 <template>
   <div>
-    <BotaoSeta rota="/" label="<" />
-
     <h1 class="titulo">Sobre o profissional</h1>
 
     <h2 class="subtitulo">Dados do profissional</h2>
@@ -25,7 +23,7 @@
 
 
     </b-form>
-    <Botao rota="/finalizado" label="PRÓXIMO" />
+    <Botao rota="/revisao" label="PRÓXIMO" />
   </div>
 </template>
 
@@ -34,7 +32,6 @@ import Botao from "@/components/Botao.vue";
 import Pagamento from "@/components/Pagamento.vue";
 import Especialiades from "./Especialiades.vue";
 import Progess from "./Progess.vue";
-import BotaoSeta from "./BotaoSeta.vue";
 
 export default {
   components: {
@@ -43,7 +40,6 @@ export default {
     Progess,
     Especialiades,
     Progess,
-    BotaoSeta,
     form: {
       especialidade: null,
       checked: [],
