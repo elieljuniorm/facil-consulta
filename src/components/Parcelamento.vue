@@ -1,6 +1,6 @@
 <template>
     <div>
-        <b-collapse id="parcelamento" v-model="visivel">
+        <b-collapse id="parcelamento" v-model="visivel" class="selectIten">
 
             <b-form-group label="Parcelamento em" v-slot="{ ariaDescribedby }" class="pacelas">
                 <b-form-radio v-model="parcelamento" :aria-describedby="ariaDescribedby" name="some-radios" value="1">
@@ -33,3 +33,13 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.selectIten {
+    background: #F9F9F9;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 0px var(--cor-sombra);
+    margin: 0em 0 1em 0;
+    padding: 1em 3em;
+}
+</style>
