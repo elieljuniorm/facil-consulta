@@ -4,13 +4,13 @@
 
             <b-form-group label="Parcelamento em" v-slot="{ ariaDescribedby }" class="pacelas">
                 <b-form-radio v-model="parcelamento" :aria-describedby="ariaDescribedby" name="some-radios" value="1">
-                    1x, sem juros
+                    <p class="descricao">1x, sem juros</p>
                 </b-form-radio>
                 <b-form-radio v-model="parcelamento" :aria-describedby="ariaDescribedby" name="some-radios" value="2">
-                    2x, sem juros
+                    <p class="descricao">2x, sem juros</p>
                 </b-form-radio>
                 <b-form-radio v-model="parcelamento" :aria-describedby="ariaDescribedby" name="some-radios" value="3">
-                    3x, sem juros
+                    <p class="descricao">3x, sem juros</p>
                 </b-form-radio>
             </b-form-group>
         </b-collapse>
@@ -41,6 +41,9 @@ export default {
     border-bottom-right-radius: 5px;
     box-shadow: 1px 1px 1px 0px var(--cor-sombra);
     margin: -1.2em 0 1em 0;
-    padding: 1em 3em;
+    padding: 1em 6.5em;
+}
+.descricao{
+    padding: 0 1.2em;
 }
 </style>
