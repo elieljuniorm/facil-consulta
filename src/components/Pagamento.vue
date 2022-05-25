@@ -1,12 +1,27 @@
 <template>
+
     <div>
         <b-form-group label="Formas de pagamento da consulta*" v-slot="{ ariaDescribedby }">
-            <b-form-checkbox v-for="option in options" v-model="selected" :key="option.value" :value="option.value" :aria-describedby="ariaDescribedby" name="flavour-3a" class="selectIten">
+
+            <b-form-checkbox v-for="option in options" v-model="selected" :key="option.value" :value="option.value"
+                :aria-describedby="ariaDescribedby" name="flavour-3a" class="selectIten">
+
                 <span class="spanText">{{ option.text }}</span>
+
             </b-form-checkbox>
+
+            <div class="selectIten">
+                <b-form-checkbox  :v-model="selected">
+                    <option value="cartao" class="spanText">Cartão</option>
+                </b-form-checkbox>
+            </div>
+
         </b-form-group>
+
         <Parcelamento :visivel="selected == 'cartao'" />
+
     </div>
+
 </template>
 
 <script>
@@ -17,8 +32,8 @@ export default {
             selected: [],
             options: [
                 { text: "Em dinheiro", value: "dinheiro" },
-                { text: "Pix", value: "pix" },
-                { text: "Cartão de crédito", value: "cartao" }
+                { text: "Pix", value: "pix" }/* ,
+                { text: "Cartão de crédito", value: "cartao" } */
             ]
         };
     },
@@ -33,11 +48,12 @@ export default {
     box-shadow: 1px 1px 1px 0px var(--cor-sombra);
     margin: 1em 0;
     padding: 1em 3em;
+}
+
+.spanText {
+    padding: 0 1em 0 3em;
     font-size: .9em;
     font-weight: 600;
     font-family: var(--fonte-padrao-open);
-}
-.spanText{
-    padding: 0 1em 0 3em;
 }
 </style>
