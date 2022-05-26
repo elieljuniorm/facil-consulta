@@ -1,10 +1,11 @@
 <template>
     <div class="container">
         <b-button type="submit" variant="primary" class="btn btn-primary">
-            <router-link :to="rota">{{ label }}</router-link>
+            <router-link :to="rota" class="label">{{ label }}</router-link>
         </b-button>
     </div>
 </template>
+
 <script>
 export default {
     name: 'Botao',
@@ -18,10 +19,11 @@ export default {
     }
 }
 </script>
+
 <style scoped>
 .container {
-    display: grid;
     padding-bottom: 2em;
+    text-align: center;
 }
 
 .btn.btn-primary,
@@ -31,19 +33,17 @@ export default {
     border-radius: 40px;
 }
 
-a {
+.label{
     color: #ffff;
     text-decoration: unset;
     font-family: var(--fonte-padrao-conforta);
     font-weight: 400;
     font-size: 1.2em;
+    padding: 1em 6em;
+    text-align: center;
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
-    .container {
-        display: flex;
-    }
-
     .btn.btn-primary,
     .btn.btn-primary:hover {
         width: 30em;

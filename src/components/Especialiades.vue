@@ -39,5 +39,6 @@ export default {
   border-color: var(--cor-letra-titulo);
   background-color: unset;
   color: var(--cor-select);
+  padding-left: 1em;
 }
 </style>

@@ -71,18 +71,18 @@ export default {
       },
       estados: [
         { text: "Selecione", value: null },
-        "Carrots",
-        "Beans",
-        "Tomatoes",
-        "Corn",
+        "Pará",
+        "São Paulo",
+        "Rio de Janeiro",
+        "Paraná",
       ],
 
       cidades: [
         { text: "Selecione", value: null },
-        "Carrots",
-        "Beans",
-        "Tomatoes",
-        "Corn",
+        "Belém",
+        "São Paulo",
+        "Rio de Janeiro",
+        "Coritiba",
       ],
       show: true,
     };
@@ -90,7 +90,7 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      alert(JSON.stringify(this.form));
+      /* alert(JSON.stringify(this.form)) */;
     },
     onReset(event) {
       event.preventDefault();
@@ -184,6 +184,7 @@ export default {
   border-color: var(--cor-letra-titulo);
   background-color: unset;
   color: var(--cor-select);
+  padding-left: .6em;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 390px) {

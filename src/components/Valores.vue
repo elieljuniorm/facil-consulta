@@ -39,19 +39,7 @@ export default {
     Pagamento,
     Progess,
     Especialiades,
-    Progess,
-    form: {
-      especialidade: null,
-      checked: [],
-    },
-    especialidades: [
-      { text: "Selecione", value: null },
-      "Carrots",
-      "Beans",
-      "Tomatoes",
-      "Corn",
-    ],
-    show: true,
+    Progess
   },
 };
 </script>
@@ -91,7 +79,7 @@ export default {
   border-end-start-radius: 5px;
   border-right: unset;
   width: 2.8em;
-  height: 3.3em
+  height: 3.22em
 }
 
 .campoValor {
