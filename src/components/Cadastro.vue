@@ -13,13 +13,13 @@
 
       <b-form-group id="input-group-2" label="CPF*" label-for="input-2" class="formBloco">
         <b-form-input id="input-2" v-model="form.cpf" type="number" placeholder="Digite um CPF" required
-          class="inputIten">
+          class="inputIten itenNumerico">
         </b-form-input>
       </b-form-group>
 
       <b-form-group id="input-group-3" label="Número de celular*" label-for="input-3" class="formBloco">
         <b-form-input id="input-3" v-model="form.numero_celular" type="number" placeholder="(00) 0 0000-0000" required
-          class="inputIten">
+          class="inputIten itenNumerico">
         </b-form-input>
       </b-form-group>
 
@@ -209,6 +209,15 @@ export default {
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
   .formGrup {
     width: 30em;
+  }
+  .itenNumerico{
+    width: 20em;
+  }
+  .containerLocalidade{
+    justify-items: normal;
+  }
+  .containerProgess {
+    padding: 1em 1em 1em 0;
   }
   .progressBarra {
     width: 30em;

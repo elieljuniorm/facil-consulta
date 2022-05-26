@@ -2,6 +2,7 @@
   <div class="atendimento">
     <BotaoSeta rota="/" label="<" />
     <Valores />
+    <div class="foto"></div>
   </div>
 </template>
 
@@ -29,11 +30,6 @@ export default {
   color: rgb(1, 24, 24);
   box-shadow: 5px 5px 10px rgb(0 0 0 / 57%);
   padding: .7em 1em 0 1em;
-  background-image: url(https://drive.google.com/file/d/1bDYgRQPPdFhZkPb6nib7mX_o7wu-Jd7w/view);
-  background-repeat: repeat;
-  background-size: cover;
-  width: 5em;
-  height: 5em;
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
@@ -43,6 +39,16 @@ export default {
     border-radius: 40px;
     margin: 5em auto;
     padding: 1em 2em 0 4em;
+  }
+  .foto {
+    background-image: url(https://github.com/elielm14/facil-consulta/blob/master/src/assets/desktop-pagina-1.png?raw=true);
+    background-repeat: repeat;
+    background-size: cover;
+    width: 31em;
+    height: 22em;
+    position: relative;
+    top: -34em;
+    left: 33em;
   }
 }
 </style>
