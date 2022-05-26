@@ -30,6 +30,7 @@ export default {
     height: 40em;
     border-radius: 40px;
     margin: 5em auto;
+    padding: 0.7em 2em 1em 2em
   }
 }
 </style>

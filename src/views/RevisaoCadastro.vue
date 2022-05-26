@@ -2,6 +2,7 @@
   <div class="revisaoCadastro">
     <BotaoSeta rota="/atendimento" label="<" />
     <Revisao />
+    <div class="foto"></div>
   </div>
 </template>
 
@@ -29,10 +30,21 @@ export default {
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
   .revisaoCadastro {
     width: 70em;
-    height: auto;
+    height: 85vh;
     border-radius: 40px;
     margin: 5em auto;
     padding: 1em 2em 0 4em;
+  }
+
+  .foto {
+    background-image: url(https://github.com/elielm14/facil-consulta/blob/master/src/assets/desktop-pagina-3.png?raw=true);
+    background-repeat: repeat;
+    background-size: cover;
+    width: 41em;
+    height: 25em;
+    position: relative;
+    top: -45em;
+    left: 23em;
   }
 }
 </style>
