@@ -6,20 +6,19 @@
 
     <b-form @submit="onSubmit" @reset="onReset" v-if="show" class="formGrup">
       <b-form-group id="input-group-1" label="Nome completo*" label-for="input-1" class="formBloco">
-        <b-form-input id="input-1" v-model="form.nome_completo" type="text" placeholder="Digite o nome completo"
+        <b-form-input id="input-1" :v-model="form.nome_completo" type="text" placeholder="Digite o nome completo"
           required class="inputIten">
         </b-form-input>
       </b-form-group>
 
       <b-form-group id="input-group-2" label="CPF*" label-for="input-2" class="formBloco">
-        <b-form-input id="input-2" v-model="form.cpf" type="number" placeholder="Digite um CPF" required
-          class="inputIten itenNumerico">
+        <b-form-input id="input-2" v-model="form.cpf" placeholder="Digite um CPF" required class="inputIten itenNumerico"  v-mask="'###.###.###-##'">
         </b-form-input>
       </b-form-group>
 
       <b-form-group id="input-group-3" label="Número de celular*" label-for="input-3" class="formBloco">
-        <b-form-input id="input-3" v-model="form.numero_celular" type="number" placeholder="(00) 0 0000-0000" required
-          class="inputIten itenNumerico">
+        <b-form-input id="input-3" v-model="form.numero_celular" placeholder="(00) 0 0000-0000" required
+          class="inputIten itenNumerico"  v-mask="'(##) # ####-####'">
         </b-form-input>
       </b-form-group>
 
