@@ -40,4 +40,17 @@ export default {
     padding: 1em 0;
     text-align: center;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 390px){
+  .imgMedica{
+      height: 17em;
+      text-align: center;
+  }
+}
+@media only screen and (min-width: 450px) and (max-width: 500px){
+  .imgMedica{
+      text-align: center;
+      height: 22em;
+  }
+}
 </style>

@@ -179,4 +179,22 @@ export default {
   background-color: unset;
   color: var(--cor-select);
 }
+
+@media only screen and (min-width: 320px) and (max-width: 390px){
+  .selectIten{
+    width: 8em;
+  }
+  .progressBarra{
+    width: 15em;
+  }
+}
+@media only screen and (min-width: 450px) and (max-width: 500px){
+  .selectIten{
+    width: 12em;
+  }
+  .progressBarra{
+    width: 25em;
+  }
+}
+
 </style>
