@@ -1,15 +1,13 @@
 <template>
   <div class="finalizado">
-    <BotaoSeta rota="/" label="<" />
     <Final/>
   </div>
 </template>
 
 <script>
-import BotaoSeta from "@/components/BotaoSeta.vue";
 import Final from "@/components/Final.vue";
 export default {
-  components: { BotaoSeta, Final },
+  components: { Final },
 };
 </script>
 <style scoped>
