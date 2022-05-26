@@ -30,7 +30,7 @@ export default {
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
   .revisaoCadastro {
     width: 70em;
-    height: 85vh;
+    height: 62em;
     border-radius: 40px;
     margin: 5em auto;
     padding: 1em 2em 0 4em;

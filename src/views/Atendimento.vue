@@ -47,7 +47,7 @@ export default {
     width: 32em;
     height: 23em;
     position: relative;
-    top: -35em;
+    top: -33em;
     left: 32em;
   }
 }
