@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <h1 class="titulo">Revisão do cadastro</h1>
 
         <p class="textFixo">Nome completo</p>
@@ -62,5 +62,8 @@ export default {
     margin: 0;
     padding-bottom: 1em;
     font-size: 1.2em;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
 }
 </style>

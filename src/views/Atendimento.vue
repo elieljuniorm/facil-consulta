@@ -30,4 +30,13 @@ export default {
   box-shadow: 5px 5px 10px rgb(0 0 0 / 57%);
   padding: .7em 1em 0 1em;
 }
+@media only screen and (min-width: 1024px) and (max-width: 1440px){
+  .atendimento{
+    width: 70em;
+    height: 50em;
+    border-radius: 40px;
+    margin: 5em auto;
+    padding: 1em 2em 0 4em;
+  }
+}
 </style>

@@ -38,4 +38,16 @@ a {
     font-weight: 400;
     font-size: 1.2em;
 }
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    .container {
+        display: flex;
+    }
+
+    .btn.btn-primary,
+    .btn.btn-primary:hover {
+        width: 30em;
+
+    }
+}
 </style>

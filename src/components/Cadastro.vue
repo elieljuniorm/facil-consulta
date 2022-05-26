@@ -12,21 +12,25 @@
       </b-form-group>
 
       <b-form-group id="input-group-2" label="CPF*" label-for="input-2" class="formBloco">
-        <b-form-input id="input-2" v-model="form.cpf" type="number" placeholder="Digite um CPF" required class="inputIten">
+        <b-form-input id="input-2" v-model="form.cpf" type="number" placeholder="Digite um CPF" required
+          class="inputIten">
         </b-form-input>
       </b-form-group>
 
       <b-form-group id="input-group-3" label="Número de celular*" label-for="input-3" class="formBloco">
-        <b-form-input id="input-3" v-model="form.numero_celular" type="number" placeholder="(00) 0 0000-0000" required class="inputIten">
+        <b-form-input id="input-3" v-model="form.numero_celular" type="number" placeholder="(00) 0 0000-0000" required
+          class="inputIten">
         </b-form-input>
       </b-form-group>
 
       <div class="containerLocalidade">
         <b-form-group id="input-group-4" label="Estado*" label-for="input-4" class="formBloco">
-          <b-form-select id="input-4" v-model="form.estado" :options="estados" required class="selectIten"></b-form-select>
+          <b-form-select id="input-4" v-model="form.estado" :options="estados" required class="selectIten">
+          </b-form-select>
         </b-form-group>
         <b-form-group id="input-group-5" label="Cidade*" label-for="input-5" class="formBloco">
-          <b-form-select id="input-5" v-model="form.cidade" :options="cidades" required class="selectIten"></b-form-select>
+          <b-form-select id="input-5" v-model="form.cidade" :options="cidades" required class="selectIten">
+          </b-form-select>
         </b-form-group>
 
         <!-- <div class="alert alert-danger" role="alert">
@@ -39,7 +43,7 @@
         <span class="spanProgress">1 de 2</span>
       </div>
 
-      <Botao rota="/atendimento" label="PRÓXIMO"/>
+      <Botao rota="/atendimento" label="PRÓXIMO" />
     </b-form>
     <!--  <b-card class="mt-3" header="Form Data Result">
       <pre class="m-0">{{ form }}</pre>
@@ -162,7 +166,8 @@ export default {
   color: var(--cor-letra-titulo);
   padding-left: 1em;
 }
-.inputIten{
+
+.inputIten {
   border-radius: 5px;
   border: 2px solid;
   border-color: var(--cor-letra-titulo);
@@ -170,7 +175,8 @@ export default {
   background-color: unset;
   color: var(--cor-select);
 }
-.selectIten{
+
+.selectIten {
   width: 11em;
   height: 2.5em;
   border-radius: 5px;
@@ -180,21 +186,32 @@ export default {
   color: var(--cor-select);
 }
 
-@media only screen and (min-width: 320px) and (max-width: 390px){
-  .selectIten{
+@media only screen and (min-width: 320px) and (max-width: 390px) {
+  .selectIten {
     width: 8em;
   }
-  .progressBarra{
+
+  .progressBarra {
     width: 15em;
   }
 }
-@media only screen and (min-width: 450px) and (max-width: 500px){
-  .selectIten{
+
+@media only screen and (min-width: 450px) and (max-width: 500px) {
+  .selectIten {
     width: 12em;
   }
-  .progressBarra{
+
+  .progressBarra {
     width: 25em;
   }
 }
 
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+  .formGrup {
+    width: 30em;
+  }
+  .progressBarra {
+    width: 30em;
+  }
+}
 </style>

@@ -107,6 +107,7 @@ export default {
   margin: 2px 0px 0px -4px;
   height: 3em;
 }
+
 .containerProgess {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -131,20 +132,32 @@ export default {
   padding-left: 1em;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 390px){
-  .selectIten{
+@media only screen and (min-width: 320px) and (max-width: 390px) {
+  .selectIten {
     width: 8em;
   }
-  .progressBarra{
+
+  .progressBarra {
     width: 15em;
   }
 }
-@media only screen and (min-width: 450px) and (max-width: 500px){
-  .selectIten{
+
+@media only screen and (min-width: 450px) and (max-width: 500px) {
+  .selectIten {
     width: 12em;
   }
-  .progressBarra{
+
+  .progressBarra {
     width: 25em;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+  .formGrup {
+    width: 31em;
+  }
+  .progressBarra {
+    width: 30em;
   }
 }
 </style>
