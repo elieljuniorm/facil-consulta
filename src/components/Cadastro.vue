@@ -43,8 +43,10 @@
         <span class="spanProgress">1 de 2</span>
       </div>
 
-      <Botao rota="/atendimento" label="PRÓXIMO" />
     </b-form>
+    
+    <Botao rota="/atendimento" label="PRÓXIMO" />
+
     <!--  <b-card class="mt-3" header="Form Data Result">
       <pre class="m-0">{{ form }}</pre>
     </b-card> -->
@@ -127,7 +129,6 @@ export default {
 .formGrup {
   font-family: var(--fonte-padrao-open);
   font-weight: 500;
-  padding: 1em 0em;
 }
 
 .formBloco {
@@ -211,15 +212,19 @@ export default {
   .formGrup {
     width: 30em;
   }
-  .itenNumerico{
+
+  .itenNumerico {
     width: 20em;
   }
-  .containerLocalidade{
+
+  .containerLocalidade {
     justify-items: normal;
   }
+
   .containerProgess {
     padding: 1em 1em 1em 0;
   }
+
   .progressBarra {
     width: 30em;
   }

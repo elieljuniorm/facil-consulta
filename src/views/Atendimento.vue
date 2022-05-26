@@ -1,8 +1,9 @@
 <template>
   <div class="atendimento">
+    <div class="foto"></div>
     <BotaoSeta rota="/" label="<" />
     <Valores />
-    <div class="foto"></div>
+    
   </div>
 </template>
 
@@ -46,9 +47,9 @@ export default {
     background-size: cover;
     width: 32em;
     height: 23em;
-    position: relative;
-    top: -33em;
-    left: 32em;
+    position: absolute;
+    top: 19em;
+    left: 45em;
   }
 }
 </style>

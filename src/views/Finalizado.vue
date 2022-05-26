@@ -16,7 +16,7 @@ export default {
   border-top-right-radius: 40px;
   border-top-left-radius: 40px;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   margin: 4em 0 0 0;
   color: rgb(1, 24, 24);
  box-shadow: 5px 5px 10px rgb(0 0 0 / 57%);

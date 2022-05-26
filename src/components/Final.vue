@@ -6,7 +6,11 @@
         <h1 class="titulo">Obrigado por se cadastrar</h1>
         <h2 class="subtitulo">Em breve você receberá seus agendamentos de consulta no telefone cadastrado &#128516</h2>
 
-        <Botao rota="/" label="OK" />
+        <div class="container">
+            <button class="botao">
+                <a href="https://facilconsulta.com.br/" target="_blank" rel="noopener noreferrer" class="link">OK</a>
+            </button>
+        </div>
     </div>
 </template>
 
@@ -26,6 +30,18 @@ export default {
     height: 20em;
 }
 
+.botao {
+    background-color: #483698;
+    border-color: unset;
+    border-radius: 40px;
+    border: unset;
+    height: 3em;
+    width: 22em;
+}
+.link{
+    text-decoration: unset;
+    color: #FFFF
+}
 .titulo {
     font-family: var(--fonte-padrao-conforta);
     font-weight: bold;
