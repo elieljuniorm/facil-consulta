@@ -81,11 +81,14 @@ export default {
 
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
     .container {
-        width: 40vh;
+        width: 57%;
         text-align: center;
     }
 
     .subtitulo {
+        text-align: center;
+    }
+    .botao{
         text-align: center;
     }
 }
