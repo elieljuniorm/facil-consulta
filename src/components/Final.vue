@@ -6,7 +6,7 @@
         <h1 class="titulo">Obrigado por se cadastrar</h1>
         <h2 class="subtitulo">Em breve você receberá seus agendamentos de consulta no telefone cadastrado &#128516</h2>
 
-        <Botao rota="/revisao" label="OK" />
+        <Botao rota="/" label="OK" />
     </div>
 </template>
 
