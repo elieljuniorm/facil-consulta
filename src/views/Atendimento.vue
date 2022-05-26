@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style scoped>
-.atendimento{
+.atendimento {
   background: white;
   border-top-right-radius: 40px;
   border-top-left-radius: 40px;
@@ -29,9 +29,15 @@ export default {
   color: rgb(1, 24, 24);
   box-shadow: 5px 5px 10px rgb(0 0 0 / 57%);
   padding: .7em 1em 0 1em;
+  background-image: url(https://drive.google.com/file/d/1bDYgRQPPdFhZkPb6nib7mX_o7wu-Jd7w/view);
+  background-repeat: repeat;
+  background-size: cover;
+  width: 5em;
+  height: 5em;
 }
-@media only screen and (min-width: 1024px) and (max-width: 1440px){
-  .atendimento{
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+  .atendimento {
     width: 70em;
     height: 50em;
     border-radius: 40px;
