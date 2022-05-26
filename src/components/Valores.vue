@@ -156,6 +156,9 @@ export default {
   .formGrup {
     width: 31em;
   }
+  .containerProgess {
+    padding: 1em 1em 1em 0;
+  }
   .progressBarra {
     width: 30em;
   }

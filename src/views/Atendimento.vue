@@ -41,14 +41,14 @@ export default {
     padding: 1em 2em 0 4em;
   }
   .foto {
-    background-image: url(https://github.com/elielm14/facil-consulta/blob/master/src/assets/desktop-pagina-1.png?raw=true);
+    background-image: url(https://github.com/elielm14/facil-consulta/blob/master/src/assets/desktop-pagina-2.png?raw=true);
     background-repeat: repeat;
     background-size: cover;
-    width: 31em;
-    height: 22em;
+    width: 32em;
+    height: 23em;
     position: relative;
-    top: -34em;
-    left: 33em;
+    top: -35em;
+    left: 32em;
   }
 }
 </style>
