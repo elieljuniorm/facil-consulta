@@ -144,6 +144,9 @@ export default {
   .formGrup {
     width: 31em;
   }
+  .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  height: 2.98em;
+}
   .containerProgess {
     padding: 1em 1em 1em 0;
   }
