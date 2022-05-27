@@ -1,9 +1,9 @@
 <template>
   <div class="atendimento">
-    <div class="foto"></div>
+   
     <BotaoSeta rota="/" label="<" />
     <Valores />
-    
+    <div class="foto"></div>
   </div>
 </template>
 
@@ -41,15 +41,15 @@ export default {
     margin: 5em auto;
     padding: 1em 2em 0 4em;
   }
-  .foto {
+   .foto {
     background-image: url(https://github.com/elielm14/facil-consulta/blob/master/src/assets/desktop-pagina-2.png?raw=true);
     background-repeat: repeat;
     background-size: cover;
-    width: 32em;
-    height: 23em;
-    position: absolute;
-    top: 19em;
-    left: 45em;
+    width: 34em;
+    height: 25em;
+    position: relative;
+    top: -33em;
+    left: 31em;
   }
 }
 </style>

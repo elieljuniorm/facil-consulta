@@ -142,7 +142,7 @@ export default {
 
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
   .formGrup {
-    width: 31em;
+    width: 29em;
   }
   .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
   height: 2.98em;
