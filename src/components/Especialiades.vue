@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import api from '@/components/api'
 export default {
     data() {
         return {
@@ -16,9 +17,25 @@ export default {
                 { value: 'b', text: 'Clínico' },
                 { value: { C: '3PO' }, text: 'Pneumologista' },
                 { value: 'd', text: 'Cirurgia geral'/* , disabled: true */ }
-            ]
+            ],
+            especilidades: {},
         }
-    }
+    },created() {
+        this.getUser();
+    },
+    methods: {
+        getUser(){
+            api 
+            .get("/especialidades")
+            .then((especialista) => {
+                this.especilidades = especialista.data
+                console.log(especialista);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+        }        
+    },
 }
 </script>
 
