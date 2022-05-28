@@ -4,46 +4,55 @@
 
     <h2 class="subtitulo">Dados do profissional</h2>
 
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show" class="formGrup">
-      <b-form-group id="input-group-1" label="Nome completo*" label-for="input-1" class="formBloco">
-        <b-form-input id="input-1" :v-model="form.nome_completo" type="text" placeholder="Digite o nome completo"
-          required class="inputIten">
-        </b-form-input>
+    <b-form @submit.stop.prevent="onSubmit">
+      <b-form-group id="example-input-group-1" label="Nome completo*" label-for="example-input-1">
+        <b-form-input id="example-input-1" name="example-input-1" v-model="$v.form.name.$model"
+          :state="validateState('name')" aria-describedby="input-1-live-feedback"></b-form-input>
+
+
+        <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter pelo menos 3
+          caracteres.</b-form-invalid-feedback>
       </b-form-group>
 
-      <b-form-group id="input-group-2" label="CPF*" label-for="input-2" class="formBloco">
-        <b-form-input id="input-2" v-model="form.cpf" placeholder="Digite um CPF" required class="inputIten itenNumerico"  v-mask="'###.###.###-##'">
-        </b-form-input>
+      <b-form-group id="example-input-group-2" label="CPF*" label-for="example-input-2">
+        <b-form-input id="example-input-2" name="example-input-2" v-model="$v.form.cpf.$model"
+          :state="validateState('cpf')" aria-describedby="input-2-live-feedback"></b-form-input>
+
+
+        <b-form-invalid-feedback id="input-2-live-feedback">Este é um campo obrigatório.</b-form-invalid-feedback>
       </b-form-group>
 
-      <b-form-group id="input-group-3" label="Número de celular*" label-for="input-3" class="formBloco">
-        <b-form-input id="input-3" v-model="form.numero_celular" placeholder="(00) 0 0000-0000" required
-          class="inputIten itenNumerico"  v-mask="'(##) # ####-####'">
-        </b-form-input>
+      <b-form-group id="example-input-group-3" label="Número de celular*" label-for="example-input-3">
+        <b-form-input id="example-input-3" name="example-input-3" v-model="$v.form.numero_celular.$model"
+          :state="validateState('numero_celular')" aria-describedby="input-3-live-feedback"></b-form-input>
+
+
+        <b-form-invalid-feedback id="input-3-live-feedback">This is a required field and must be at least 10 characters.
+        </b-form-invalid-feedback>
       </b-form-group>
 
-      <div class="containerLocalidade">
-        <b-form-group id="input-group-4" label="Estado*" label-for="input-4" class="formBloco">
-          <b-form-select id="input-4" v-model="form.estado" :options="estados" required class="selectIten">
-          </b-form-select>
-        </b-form-group>
-        <b-form-group id="input-group-5" label="Cidade*" label-for="input-5" class="formBloco">
-          <b-form-select id="input-5" v-model="form.cidade" :options="cidades" required class="selectIten">
-          </b-form-select>
-        </b-form-group>
+      <b-form-group id="example-input-group-4" label="Estado" label-for="example-input-4">
+        <b-form-select id="example-input-4" name="example-input-4" v-model="$v.form.estado.$model" :options="estados"
+          :state="validateState('estado')" aria-describedby="input-4-live-feedback"></b-form-select>
 
-        <!-- <div class="alert alert-danger" role="alert">
-                Erro message
-              </div> -->
-      </div>
+        <b-form-invalid-feedback id="input-4-live-feedback">This is a required field.</b-form-invalid-feedback>
+      </b-form-group>
 
-      <div class="containerProgess">
-        <Progess :etapa="1" class="progressBarra" />
-        <span class="spanProgress">1 de 2</span>
-      </div>
+      <b-form-group id="example-input-group-5" label="Cidade" label-for="example-input-5">
+        <b-form-select id="example-input-5" name="example-input-5" v-model="$v.form.cidade.$model" :options="cidades"
+          :state="validateState('cidade')" aria-describedby="input-5-live-feedback"></b-form-select>
 
+        <b-form-invalid-feedback id="input-2-live-feedback">This is a required field.</b-form-invalid-feedback>
+      </b-form-group>
+
+      <b-button type="submit" variant="primary">Submit</b-button>
     </b-form>
-    
+
+    <div class="containerProgess">
+      <Progess :etapa="1" class="progressBarra" />
+      <span class="spanProgress">1 de 2</span>
+    </div>
+
     <Botao rota="/atendimento" label="PRÓXIMO" />
 
     <!--  <b-card class="mt-3" header="Form Data Result">
@@ -53,60 +62,97 @@
 </template>
 
 <script>
+import { validationMixin } from "vuelidate";
+import { required, minLength, maxLength } from "vuelidate/lib/validators";
 import Botao from "./Botao.vue";
 import Progess from "./Progess.vue";
+
 export default {
+  mixins: [validationMixin],
   components: {
     Botao,
     Progess,
   },
   data() {
     return {
+      estados: [
+        { value: null, text: "Selecione" },
+        { value: "para", text: "Pará" },
+        { value: "maranhao", text: "Maranhão" }
+      ],
+      cidades: [
+        { value: null, text: "Selecione" },
+        { value: "belem", text: "Belém" },
+        { value: "sao luis", text: "São Luis" }
+      ],
       form: {
-        nome_completo: "",
-        cpf: "",
-        numero_celular: "",
+        name: null,
+        cpf: null,
+        numero_celular: null,
         estado: null,
         cidade: null,
-        checked: [],
-      },
-      estados: [
-        { text: "Selecione", value: null },
-        "Pará",
-        "São Paulo",
-        "Rio de Janeiro",
-        "Paraná",
-      ],
-
-      cidades: [
-        { text: "Selecione", value: null },
-        "Belém",
-        "São Paulo",
-        "Rio de Janeiro",
-        "Coritiba",
-      ],
-      show: true,
+      }
     };
   },
-  methods: {
-    onSubmit(event) {
-      event.preventDefault();
-      /* alert(JSON.stringify(this.form)) */;
-    },
-    onReset(event) {
-      event.preventDefault();
-      // Reset our form values
-      this.form.email = "";
-      this.form.name = "";
-      this.form.food = null;
-      this.form.checked = [];
-      // Trick to reset/clear native browser form validation state
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
-    },
+  validations: {
+    form: {
+      estado: {
+        required
+      },
+      name: {
+        required,
+        minLength: minLength(3),
+        maxLength: maxLength(48)
+      },
+      cpf: {
+        required,
+        minLength: minLength(11),
+        maxLength: maxLength(11)
+      },
+      numero_celular: {
+        required,
+        minLength: minLength(11),
+        maxLength: maxLength(11)
+      },
+      estado: {
+        required
+      },
+      cidade: {
+        required
+      }
+
+    }
   },
+  methods: {
+
+    validateState(name) {
+      const { $dirty, $error } = this.$v.form[name];
+      return $dirty ? !$error : null;
+    },
+    validateState(cpf) {
+      const { $dirty, $error } = this.$v.form[cpf];
+      return $dirty ? !$error : null;
+    },
+    validateState(numero_celular) {
+      const { $dirty, $error } = this.$v.form[numero_celular];
+      return $dirty ? !$error : null;
+    },
+    validateState(estado) {
+      const { $dirty, $error } = this.$v.form[estado];
+      return $dirty ? !$error : null;
+    },
+    validateState(cidade) {
+      const { $dirty, $error } = this.$v.form[cidade];
+      return $dirty ? !$error : null;
+    },
+
+    onSubmit() {
+      this.$v.form.$touch();
+      if (this.$v.form.$anyError) {
+        return;
+      }
+    }
+  }
 };
 </script>
 
