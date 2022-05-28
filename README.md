@@ -11,6 +11,7 @@ Foi desenvolvido o Front-end de um Cadastro de Profissional da Saúde (médico),
 * **[V-Mask](https://www.npmjs.com/package/v-mask)**
 * **[Bootstrap-Vue](https://bootstrap-vue.org/)**
 * **[Axios](https://www.npmjs.com/package/vue-axios)**
+* **[Vuelidate](https://vuelidate.js.org/#sub-basic-usage)**
 
 ## Executando Localmente o Projeto 🔥
 
