@@ -1,11 +1,13 @@
 <template>
     <div class="conteinerEspecialidade">
         <div class="mt-3">Especialidade principal*</div>
-        <b-form-select v-model="selected" :options="options" required class="selectIten"></b-form-select>
+        <b-form-select v-model="selected" :options="options" required class="selectIten">
+        </b-form-select>
     </div>
 </template>
 
 <script>
+
 import api from '@/components/api'
 export default {
     data() {
@@ -18,23 +20,26 @@ export default {
                 { value: { C: '3PO' }, text: 'Pneumologista' },
                 { value: 'd', text: 'Cirurgia geral'/* , disabled: true */ }
             ],
-            especilidades: {},
-        }
-    },created() {
+            especialista: " ",
+        };
+    },
+    created() {
         this.getUser();
     },
     methods: {
         getUser(){
             api 
             .get("/especialidades")
-            .then((especialista) => {
-                this.especilidades = especialista.data
-                console.log(especialista);
+
+            .then(resp => {
+                this.especialista = resp.data
+                console.log(resp.data);
             })
+
             .catch((error) => {
                 console.log(error);
             })
-        }        
+        }       
     },
 }
 </script>
