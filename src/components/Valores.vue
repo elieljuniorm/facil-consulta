@@ -13,6 +13,7 @@
         <b-form-input id="inline-form-input-username" type="number" placeholder="Valor" required class="campoValor">
         </b-form-input>
       </b-input-group>
+      <!-- between: between(30, 350) uso para valor validado -->
 
       <Pagamento />
 
