@@ -5,6 +5,7 @@
     <h2 class="subtitulo">Dados do profissional</h2>
 
     <b-form @submit.stop.prevent="onSubmit" class="formGrup">
+
       <b-form-group id="example-input-group-1" label="Nome completo*" label-for="example-input-1" class="formBloco">
         <b-form-input id="example-input-1" name="example-input-1" v-model="$v.form.name.$model"
           :state="validateState('name')" aria-describedby="input-1-live-feedback" class="inputIten"></b-form-input>
@@ -16,54 +17,62 @@
 
       <b-form-group id="example-input-group-2" label="CPF*" label-for="example-input-2" class="formBloco">
         <b-form-input id="example-input-2" name="example-input-2" v-model="$v.form.cpf.$model"
-          :state="validateState('cpf')" aria-describedby="input-2-live-feedback" class="inputIten"></b-form-input>
+          :state="validateState('cpf')" aria-describedby="input-2-live-feedback" class="inputIten itenNumerico"></b-form-input>
 
 
-        <b-form-invalid-feedback id="input-2-live-feedback">Este é um campo obrigatório.</b-form-invalid-feedback>
+        <b-form-invalid-feedback id="input-2-live-feedback">Este é um campo obrigatório e deve ter 11 caracteres.
+        </b-form-invalid-feedback>
       </b-form-group>
 
       <b-form-group id="example-input-group-3" label="Número de celular*" label-for="example-input-3" class="formBloco">
         <b-form-input id="example-input-3" name="example-input-3" v-model="$v.form.numero_celular.$model"
-          :state="validateState('numero_celular')" aria-describedby="input-3-live-feedback" class="inputIten"></b-form-input>
+          :state="validateState('numero_celular')" aria-describedby="input-3-live-feedback" class="inputIten itenNumerico">
+        </b-form-input>
 
 
-        <b-form-invalid-feedback id="input-3-live-feedback">This is a required field and must be at least 10 characters.
+        <b-form-invalid-feedback id="input-3-live-feedback">Este é um campo obrigatório e deve ter 11 caracteres.
         </b-form-invalid-feedback>
       </b-form-group>
 
       <div class="containerLocalidade">
 
         <b-form-group id="example-input-group-4" label="Estado" label-for="example-input-4" class="formBloco">
-          
-          <b-form-select id="example-input-4" name="example-input-4" v-model="$v.form.estado.$model" :options="estados"
-            :state="validateState('estado')" aria-describedby="input-4-live-feedback" class="selectIten"></b-form-select>
 
-          <b-form-invalid-feedback id="input-4-live-feedback">This is a required field.</b-form-invalid-feedback>
+          <b-form-select id="example-input-4" name="example-input-4" v-model="$v.form.estado.$model" :options="estados"
+            :state="validateState('estado')" aria-describedby="input-4-live-feedback" class="selectIten">
+          </b-form-select>
+
+          <b-form-invalid-feedback id="input-4-live-feedback">Este é um campo obrigatório e deve ter uma cidade
+            selecionada.</b-form-invalid-feedback>
 
         </b-form-group>
 
         <b-form-group id="example-input-group-5" label="Cidade" label-for="example-input-5" class="formBloco">
 
           <b-form-select id="example-input-5" name="example-input-5" v-model="$v.form.cidade.$model" :options="cidades"
-            :state="validateState('cidade')" aria-describedby="input-5-live-feedback" class="selectIten"></b-form-select>
+            :state="validateState('cidade')" aria-describedby="input-5-live-feedback" class="selectIten">
+          </b-form-select>
 
-          <b-form-invalid-feedback id="input-2-live-feedback">This is a required field.</b-form-invalid-feedback>
+          <b-form-invalid-feedback id="input-2-live-feedback">Este é um campo obrigatório e deve ter um estado
+            selecionado.</b-form-invalid-feedback>
 
         </b-form-group>
 
       </div>
 
+      <div class="containerProgess">
+        <Progess :etapa="1" class="progressBarra" />
+        <span class="spanProgress">1 de 2</span>
+      </div>
+
       <b-button type="submit" variant="primary">Submit</b-button>
+
+      <Botao rota="/atendimento" label="PRÓXIMO" />
+
     </b-form>
 
-    <div class="containerProgess">
-      <Progess :etapa="1" class="progressBarra" />
-      <span class="spanProgress">1 de 2</span>
-    </div>
-
-    <Botao rota="/atendimento" label="PRÓXIMO" />
-
   </div>
+
 </template>
 
 <script>

@@ -46,7 +46,7 @@ export default {
     height: 25em;
     position: relative;
     top: -33em;
-    left: 28em;
+    left: 29em;
   }
 }
 </style>
