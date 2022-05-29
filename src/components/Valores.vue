@@ -4,44 +4,102 @@
 
     <h2 class="subtitulo">Dados do profissional</h2>
 
-    <b-form inline class="formGrup">
+    <b-form @submit.stop.prevent="onSubmit" class="formGrup">
 
-      <Especialiades />
+      <b-form-group id="example-input-group-1" label="Especialidade*" label-for="example-input-1" class="especilidade">
 
-      <label class="sr-only" for="inline-form-input-username">Informe o preço da consulta*</label>
-      <b-input-group prepend="R$" class="mb-2 mr-sm-2 mb-sm-0 grupoValor">
-        <b-form-input id="inline-form-input-username" type="number" placeholder="Valor" required class="campoValor">
-        </b-form-input>
-      </b-input-group>
-      <!-- between: between(30, 350) uso para valor validado -->
+        <b-form-select id="example-input-1" name="example-input-1" v-model="$v.form.especialista.$model"
+          :options="especialista" :state="validateState('especialista')" aria-describedby="input-1-live-feedback"
+          class="selectOpt">
+        </b-form-select>
+
+        <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter uma especialidade selecionada.</b-form-invalid-feedback>
+
+      </b-form-group>
+
+      <b-form-group id="example-input-group-1" label="Valor da consulta*" label-for="example-input-1" class="valor">
+
+        <b-form-input type="number" id="example-input-1" name="example-input-1" v-model="$v.form.valor.$model"
+          :state="validateState('valor')" aria-describedby="input-1-live-feedback" class="inputIten itenNumerico"
+          placeholder="Valor"></b-form-input>
+
+        <span class="spanLegenda">R$</span>
+
+        <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter um valor mínimo de R$ 30,00 e máximo de R$ 350,00.
+        </b-form-invalid-feedback>
+      </b-form-group>
 
       <Pagamento />
 
-      <div class="containerProgess">
-        <Progess :etapa="2" class="progressBarra" />
-        <span class="spanProgress">2 de 2</span>
-      </div>
-
+      <b-button type="submit" variant="primary">Submit</b-button>
 
     </b-form>
+
+    <div class="containerProgess">
+      <Progess :etapa="2" class="progressBarra" />
+      <span class="spanProgress">2 de 2</span>
+    </div>
+
     <Botao rota="/revisao" label="PRÓXIMO" />
+
   </div>
 </template>
 
 <script>
-import Botao from "@/components/Botao.vue";
-import Pagamento from "@/components/Pagamento.vue";
-import Especialiades from "./Especialiades.vue";
+import { validationMixin } from "vuelidate";
+import { required, between } from "vuelidate/lib/validators";
+import Botao from "./Botao.vue";
 import Progess from "./Progess.vue";
+import Pagamento from "./Pagamento.vue";
 
 export default {
+  mixins: [validationMixin],
   components: {
     Botao,
-    Pagamento,
     Progess,
-    Especialiades,
-    Progess
+    Pagamento,
   },
+  data() {
+    return {
+      especialista: [
+        { value: null, text: "Selecione a especialidade" },
+        { value: "cardiologista", text: "Cardiologista" },
+        { value: "fisioterapeuta", text: "Fisioterapeuta" }
+      ],
+      form: {
+        especialista: null,
+        valor: null,
+      }
+    };
+  },
+  validations: {
+    form: {
+      especialista: {
+        required
+      },
+      valor: {
+        required,
+        between: between (30,350)
+      }
+    }
+  },
+  methods: {
+
+    validateState(valor) {
+      const { $dirty, $error } = this.$v.form[valor];
+      return $dirty ? !$error : null;
+    },
+    validateState(especialista) {
+      const { $dirty, $error } = this.$v.form[especialista];
+      return $dirty ? !$error : null;
+    },
+    onSubmit() {
+      this.$v.form.$touch();
+      if (this.$v.form.$anyError) {
+        return;
+      }
+    }
+  }
 };
 </script>
 
@@ -66,35 +124,26 @@ export default {
   padding-bottom: 1em;
 }
 
-.grupoValor {
-  padding: .5em 0;
-  width: 18em;
+.especilidade {
+  padding: .5em 0 1em 0;
+  font-family: var(--fonte-padrao-open);
 }
 
-.input-group-text {
-  color: #ffff;
-  background-color: var(--cor-letra-titulo);
-  font-weight: bold;
-  border: 2px solid;
-  border-top-left-radius: 5px;
-  border-end-start-radius: 5px;
-  border-right: unset;
-  width: 2.8em;
-  height: 3.22em
-}
-
-.campoValor {
-  border: 2px solid;
+.selectOpt {
+  width: 100%;
+  height: 3em;
   border-radius: 5px;
-  border-left: unset;
-  border-color: var(--cor-letra-titulo);
+  border: 2px solid var(--cor-letra-titulo);
   background-color: unset;
   color: var(--cor-select);
+  padding-left: 1em;
 }
 
-.input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
-  margin: 2px 0px 0px -4px;
-  height: 3em;
+.inputIten {
+  width: 10em;
+  border-radius: 5px;
+  border: 2px solid var(--cor-letra-titulo);
+  background-color: unset;
 }
 
 .containerProgess {
@@ -145,12 +194,15 @@ export default {
   .formGrup {
     width: 29em;
   }
+
   .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
-  height: 2.98em;
-}
+    height: 2.98em;
+  }
+
   .containerProgess {
     padding: 1em 1em 1em 0;
   }
+
   .progressBarra {
     width: 30em;
   }
