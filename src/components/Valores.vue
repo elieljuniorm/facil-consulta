@@ -13,19 +13,22 @@
           class="selectOpt">
         </b-form-select>
 
-        <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter uma especialidade selecionada.</b-form-invalid-feedback>
+        <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter uma especialidade
+          selecionada.</b-form-invalid-feedback>
 
       </b-form-group>
 
-      <b-form-group id="example-input-group-1" label="Valor da consulta*" label-for="example-input-1" class="valor">
+      <b-form-group id="example-input-group-1" label="Valor da consulta*" label-for="example-input-1">
+        <div class="valor">
 
-        <b-form-input type="number" id="example-input-1" name="example-input-1" v-model="$v.form.valor.$model"
-          :state="validateState('valor')" aria-describedby="input-1-live-feedback" class="inputIten itenNumerico"
-          placeholder="Valor"></b-form-input>
+          <b-form-input  min='0' type="number" id="example-input-1" name="example-input-1" v-model="$v.form.valor.$model"
+            :state="validateState('valor')" aria-describedby="input-1-live-feedback" class="inputIten itenNumerico"
+            placeholder="Valor"></b-form-input>
 
-        <span class="spanLegenda">R$</span>
-
-        <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter um valor mínimo de R$ 30,00 e máximo de R$ 350,00.
+          <span class="spanLegenda">R$</span>
+        </div>
+        <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter um valor mínimo de R$
+          30,00 e máximo de R$ 350,00.
         </b-form-invalid-feedback>
       </b-form-group>
 
@@ -79,7 +82,7 @@ export default {
       },
       valor: {
         required,
-        between: between (30,350)
+        between: between(30, 350)
       }
     }
   },
@@ -139,11 +142,27 @@ export default {
   padding-left: 1em;
 }
 
-.inputIten {
+.valor {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin: 1em 0;
+}
+.spanLegenda{
+  background-color: var(--cor-letra-titulo);
+  color: #ffff;
+  padding: 0.5em;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.itenNumerico{
   width: 10em;
-  border-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   border: 2px solid var(--cor-letra-titulo);
   background-color: unset;
+  margin: 0 0 0 -4px;
 }
 
 .containerProgess {
