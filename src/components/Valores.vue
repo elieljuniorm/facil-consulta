@@ -19,6 +19,7 @@
       </b-form-group>
 
       <b-form-group id="example-input-group-1" label="Valor da consulta*" label-for="example-input-1">
+        
         <div class="valor">
 
           <b-form-input  min='0' type="number" id="example-input-1" name="example-input-1" v-model="$v.form.valor.$model"
@@ -27,8 +28,7 @@
 
           <span class="spanLegenda">R$</span>
         </div>
-        <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter um valor mínimo de R$
-          30,00 e máximo de R$ 350,00.
+        <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter um valor mínimo de R$30,00 e máximo de R$ 350,00.
         </b-form-invalid-feedback>
       </b-form-group>
 
