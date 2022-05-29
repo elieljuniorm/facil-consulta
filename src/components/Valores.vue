@@ -19,22 +19,24 @@
       </b-form-group>
 
       <b-form-group id="example-input-group-1" label="Valor da consulta*" label-for="example-input-1">
-        
-        <div class="valor">
 
-          <b-form-input  min='0' type="number" id="example-input-1" name="example-input-1" v-model="$v.form.valor.$model"
-            :state="validateState('valor')" aria-describedby="input-1-live-feedback" class="inputIten itenNumerico"
+        <b-input-group prepend="R$">
+
+          <b-form-input min='0' type="number" id="example-input-1" name="example-input-1" v-model="$v.form.valor.$model"
+            :state="validateState('valor')" aria-describedby="input-1-live-feedback" class="itenNumerico"
             placeholder="Valor"></b-form-input>
 
-          <span class="spanLegenda">R$</span>
-        </div>
-        <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter um valor mínimo de R$30,00 e máximo de R$ 350,00.
-        </b-form-invalid-feedback>
+          <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter um valor mínimo de
+            R$ 30,00 e máximo de R$ 350,00.
+          </b-form-invalid-feedback>
+        </b-input-group>
+
       </b-form-group>
 
       <Pagamento />
 
-      <b-button type="submit" variant="primary">Submit</b-button>
+      <!-- <b-button type="submit" variant="primary">Submit</b-button> -->
+      <Botao rota="/revisao" label="PRÓXIMO" />
 
     </b-form>
 
@@ -43,14 +45,14 @@
       <span class="spanProgress">2 de 2</span>
     </div>
 
-    <Botao rota="/revisao" label="PRÓXIMO" />
+    
 
   </div>
 </template>
 
 <script>
 import { validationMixin } from "vuelidate";
-import { required, between } from "vuelidate/lib/validators";
+import { required, between, maxLength } from "vuelidate/lib/validators";
 import Botao from "./Botao.vue";
 import Progess from "./Progess.vue";
 import Pagamento from "./Pagamento.vue";
@@ -82,7 +84,8 @@ export default {
       },
       valor: {
         required,
-        between: between(30, 350)
+        between: between(30, 350),
+        maxLength: maxLength(7)
       }
     }
   },
@@ -149,20 +152,26 @@ export default {
   flex-direction: row-reverse;
   margin: 1em 0;
 }
-.spanLegenda{
+
+.input-group-text {
   background-color: var(--cor-letra-titulo);
   color: #ffff;
   padding: 0.5em;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  border: 2px solid var(--cor-letra-titulo);
 }
-.itenNumerico{
+
+.itenNumerico {
   width: 10em;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
   border: 2px solid var(--cor-letra-titulo);
   background-color: unset;
-  margin: 0 0 0 -4px;
+  margin: 0 40% 0 -4px;
 }
 
 .containerProgess {
