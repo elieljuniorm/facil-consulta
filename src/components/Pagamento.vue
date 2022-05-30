@@ -1,13 +1,16 @@
 <template>
 
     <div>
-        <b-form-group label="Formas de pagamento da consulta*" v-slot="{ ariaDescribedby }">
 
+        <b-form-group v-slot="{ ariaDescribedby }">
+            <label>Formas de pagamento*</label>
             <b-form-checkbox v-for="option in options" v-model="form.tipo_pagamento" :key="option.value"
                 :value="option.text" :aria-describedby="ariaDescribedby" name="flavour-3a" class="selectIten">
                 <span class="spanText">{{ option.text }}</span>
             </b-form-checkbox>
+
             <Parcelamento :visivel="form.tipo_pagamento.indexOf('Cartão de crédito') !== -1" />
+
         </b-form-group>
 
     </div>
@@ -68,5 +71,8 @@ export default {
     font-size: .9em;
     font-weight: 600;
     font-family: var(--fonte-padrao-open);
+}
+label{
+    margin: 1em 0;
 }
 </style>

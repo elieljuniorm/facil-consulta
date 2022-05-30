@@ -25,7 +25,7 @@
 
       </b-form-group>
 
-      <b-form-group id="example-input-group-1" label="Valor da consulta*" label-for="example-input-1">
+      <b-form-group id="example-input-group-1" label="Valor da consulta*" label-for="example-input-1" class="valorConsulta">
 
         <b-input-group prepend="R$">
 
@@ -185,6 +185,7 @@ export default {
   background-color: unset;
   color: var(--cor-select);
   padding-left: 1em;
+  margin: 1em 0;
 }
 
 .valor {
@@ -193,6 +194,9 @@ export default {
   align-items: center;
   flex-direction: row-reverse;
   margin: 1em 0;
+}
+.input-group{
+  margin: 1em 0 1.5em 0;
 }
 
 .input-group-text {
@@ -267,6 +271,9 @@ export default {
 
   .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
     height: 2.98em;
+  }
+  .input-group-text {
+    padding: .64em;
   }
 
   .containerProgess {

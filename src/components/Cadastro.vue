@@ -40,8 +40,8 @@
 
       <div class="containerLocalidade">
 
-        <b-form-group id="example-input-group-4" label="Estado*" label-for="example-input-4" class="formBloco">
-
+        <b-form-group id="example-input-group-4" label-for="example-input-4" class="formBloco">
+          <label>Estado*</label>
           <b-form-select id="example-input-4" name="example-input-4" v-model="$v.form.estado.$model" :options="estados"
             text-field="nome" value-field="nome" :state="validateState('estado')" @change="getCidades()"
             aria-describedby="input-4-live-feedback" class="selectIten">
@@ -59,8 +59,8 @@
 
         </b-form-group>
 
-        <b-form-group id="example-input-group-5" label="Cidade*" label-for="example-input-5" class="formBloco">
-
+        <b-form-group id="example-input-group-5" label-for="example-input-5" class="formBloco">
+          <label>Cidade*</label>
           <b-form-select id="example-input-5" name="example-input-5" v-model="$v.form.cidade.$model" :options="cidades"
             text-field="nome" value-field="nome" :state="validateState('cidade')"
             aria-describedby="input-5-live-feedback" class="selectIten">
@@ -84,8 +84,6 @@
         <Progess :etapa="1" class="progressBarra" />
         <span class="spanProgress">1 de 2</span>
       </div>
-
-      <!-- <b-button type="submit" variant="primary">Submit</b-button> -->
 
       <Botao label="PRÓXIMO" class="btnComponente" />
 
@@ -286,6 +284,9 @@ export default {
   justify-content: center;
   margin: auto;
 }
+label{
+  margin-bottom: 1em;
+}
 .inputIten {
   border-radius: 5px;
   border: 2px solid;
@@ -293,8 +294,8 @@ export default {
   padding: 12px;
   background-color: unset;
   color: var(--cor-select);
+  margin-top: 1em;
 }
-
 .selectIten {
   width: 11em;
   height: 2.5em;
@@ -359,6 +360,9 @@ export default {
 
   .itenNumerico {
     width: 20em;
+  }
+  .inputIten{
+    margin: 0.5em 0 0 0;
   }
 
   .containerLocalidade {
