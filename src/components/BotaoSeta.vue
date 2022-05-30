@@ -32,6 +32,10 @@ export default {
 button {
     color: #483698;
     text-decoration: unset;
+    color: var(--cor-letra-titulo);
     font-family: var(--fonte-padrao-conforta);
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
 }
 </style>

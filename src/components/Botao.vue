@@ -1,7 +1,8 @@
 <template>
     <div class="container">
-        <b-button type="submit" variant="primary" class="btn btn-primary">{{ label }}
-        </b-button>
+        <button type="submit" class="btnComponente">
+        {{ label }}
+        </button>
     </div>
 </template>
 
@@ -12,51 +13,42 @@ export default {
         label: {
             type: String
         }
-    }, methods: {
-
     },
 }
 </script>
 
-<style scoped>
+<style>
 .container {
     padding-bottom: 2em;
     text-align: center;
 }
-
-.btn.btn-primary,
-.btn.btn-primary:hover {
-    background-color: #483698;
-    border-color: unset;
+.btnComponente {
+    background-color: unset;
+    border-color: none;
+    border: none;
     border-radius: 40px;
     height: 3em;
-    width: 22em;
-}
-
-.label {
+    width: inherit;
     color: #ffff;
     text-decoration: unset;
     font-family: var(--fonte-padrao-conforta);
     font-weight: 400;
-    font-size: 1.2em;
+    font-size: 1.1em;
     text-align: center;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 380px) {
 
-    .btn.btn-primary,
-    .btn.btn-primary:hover {
+    .btnComponente {
         height: 4.1em;
-        width: 16em;
+        width: inherit;
     }
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
 
-    .btn.btn-primary,
-    .btn.btn-primary:hover {
-        width: 30em;
-
+    .btnComponente {
+        width: inherit;
     }
 
     .container {

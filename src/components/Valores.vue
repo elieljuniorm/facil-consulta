@@ -42,17 +42,14 @@
 
       <Pagamento />
 
+      <div class="containerProgess">
+        <Progess :etapa="2" class="progressBarra" />
+        <span class="spanProgress">2 de 2</span>
+      </div>
       <!-- <b-button type="submit" variant="primary">Submit</b-button> -->
-      <Botao label="PRÓXIMO" />
+      <Botao label="PRÓXIMO" class="btnComponente" />
 
     </b-form>
-
-    <div class="containerProgess">
-      <Progess :etapa="2" class="progressBarra" />
-      <span class="spanProgress">2 de 2</span>
-    </div>
-
-
 
   </div>
 </template>
@@ -156,6 +153,10 @@ export default {
   font-weight: bold;
   color: var(--cor-letra-titulo);
   padding-top: 0.5em;
+}
+
+.btnComponente {
+  background-color: #483698;
 }
 
 .subtitulo {

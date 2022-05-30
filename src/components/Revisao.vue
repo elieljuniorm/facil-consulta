@@ -36,10 +36,10 @@
         </p>
 
         <div>
-            <Botao label="CADASTRAR PROFISSIONAL" /><br>
+            <Botao label="CADASTRAR PROFISSIONAL" class="btnComponente"/><br>
         </div>
         <div>
-            <BotaoSeta rota="/" label="EDITAR CADASTRO" class="botaoEdit" />
+            <BotaoSeta rota="/" label="Editar cadastro" class="botaoEdit" />
         </div>
 
     </b-form>
@@ -85,7 +85,13 @@ export default {
     color: var(--cor-letra-titulo);
     padding: .5em auto -3em auto !important;
 }
-
+.btnComponente{
+    background-color: yellow !important;
+    border-radius: 40px;
+    height: 3em;
+    width: 22em;
+    /* color: black; */
+}
 .textFixo {
     font-weight: bold;
 }

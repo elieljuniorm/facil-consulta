@@ -87,7 +87,7 @@
 
       <!-- <b-button type="submit" variant="primary">Submit</b-button> -->
 
-      <Botao label="PRÓXIMO" />
+      <Botao label="PRÓXIMO" class="btnComponente" />
 
     </b-form>
 
@@ -263,7 +263,6 @@ export default {
   color: var(--cor-letra-titulo);
   padding-top: 0.5em;
 }
-
 .subtitulo {
   font-family: var(--fonte-padrao-open);
   font-size: 1.3em;
@@ -279,7 +278,6 @@ export default {
 .formBloco {
   padding: 1em 0;
 }
-
 .containerLocalidade {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -288,7 +286,28 @@ export default {
   justify-content: center;
   margin: auto;
 }
+.inputIten {
+  border-radius: 5px;
+  border: 2px solid;
+  border-color: var(--cor-letra-titulo);
+  padding: 12px;
+  background-color: unset;
+  color: var(--cor-select);
+}
 
+.selectIten {
+  width: 11em;
+  height: 2.5em;
+  border-radius: 5px;
+  border: 2px solid;
+  border-color: var(--cor-letra-titulo);
+  background-color: unset;
+  color: var(--cor-select);
+  padding-left: .6em;
+}
+.btnComponente{
+  background-color: #483698;
+}
 .containerProgess {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -311,26 +330,6 @@ export default {
   font-size: 1.2em;
   color: var(--cor-letra-titulo);
   padding-left: 1em;
-}
-
-.inputIten {
-  border-radius: 5px;
-  border: 2px solid;
-  border-color: var(--cor-letra-titulo);
-  padding: 12px;
-  background-color: unset;
-  color: var(--cor-select);
-}
-
-.selectIten {
-  width: 11em;
-  height: 2.5em;
-  border-radius: 5px;
-  border: 2px solid;
-  border-color: var(--cor-letra-titulo);
-  background-color: unset;
-  color: var(--cor-select);
-  padding-left: .6em;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 390px) {
