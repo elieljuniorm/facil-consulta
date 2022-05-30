@@ -36,7 +36,7 @@ export default {
     border-radius: 40px;
     border: unset;
     height: 3em;
-    width: 22em;
+    width: 15em;
 }
 .link{
     text-decoration: unset;
