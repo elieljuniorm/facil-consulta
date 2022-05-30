@@ -6,7 +6,9 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueMask from 'v-mask';
 import Vuelidate from 'vuelidate'
+import VueSessionStorage from 'vue-sessionstorage';
 
+Vue.use(VueSessionStorage);
 Vue.use(Vuelidate);
 Vue.use(VueMask);
 Vue.use(BootstrapVue)

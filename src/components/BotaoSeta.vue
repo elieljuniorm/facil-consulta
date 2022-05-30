@@ -1,8 +1,10 @@
 <template>
     <div>
-        <b-button type="submit" variant="primary" class="btn btn-primary">
-            <router-link :to="rota">{{label}}</router-link>
-        </b-button>
+        <router-link :to="rota">
+            <b-button type="submit" variant="primary" class="btn btn-primary">
+                {{ label }}
+            </b-button>
+        </router-link>
     </div>
 </template>
 <script>
@@ -12,7 +14,7 @@ export default {
         rota: {
             type: String
         },
-        label:{
+        label: {
             type: String
         }
     }
@@ -20,13 +22,14 @@ export default {
 </script>
 <style scoped>
 .btn.btn-primary,
-.btn.btn-primary:hover{
-  background-color: unset;
-  border-color: unset;
-  border: none;
-  margin-top: -8em;
+.btn.btn-primary:hover {
+    background-color: unset;
+    border-color: unset;
+    border: none;
+    /* margin-top: -8em; */
 }
-a{
+
+button {
     color: #483698;
     text-decoration: unset;
     font-family: var(--fonte-padrao-conforta);

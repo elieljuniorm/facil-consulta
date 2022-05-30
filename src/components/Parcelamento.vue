@@ -3,13 +3,13 @@
         <b-collapse id="parcelamento" v-model="visivel" class="selectIten">
 
             <b-form-group label="Parcelamento em" v-slot="{ ariaDescribedby }" class="pacelas">
-                <b-form-radio v-model="parcelamento" :aria-describedby="ariaDescribedby" name="some-radios" value="1">
+                <b-form-radio v-model="form.parcelamento" :aria-describedby="ariaDescribedby" name="some-radios" value="1">
                     <p class="descricao">1x, sem juros</p>
                 </b-form-radio>
-                <b-form-radio v-model="parcelamento" :aria-describedby="ariaDescribedby" name="some-radios" value="2">
+                <b-form-radio v-model="form.parcelamento" :aria-describedby="ariaDescribedby" name="some-radios" value="2">
                     <p class="descricao">2x, sem juros</p>
                 </b-form-radio>
-                <b-form-radio v-model="parcelamento" :aria-describedby="ariaDescribedby" name="some-radios" value="3">
+                <b-form-radio v-model="form.parcelamento" :aria-describedby="ariaDescribedby" name="some-radios" value="3">
                     <p class="descricao">3x, sem juros</p>
                 </b-form-radio>
             </b-form-group>
@@ -28,7 +28,30 @@ export default {
     },
     data() {
         return {
-            parcelamento: ''
+            form: {
+                name: null,
+                cpf: null,
+                numero_celular: null,
+                estado: null,
+                cidade: null,
+                especialista: null,
+                valor: null,
+                tipo_pagamento: [],
+                parcelamento: null
+            }
+        }
+    },
+    mounted() {
+        if (this.$session.get("form")) {
+            this.form = this.$session.get("form");
+        }
+    },
+    watch: {
+        'form': {
+            handler: function (_form) {
+                this.$session.set("form", _form);
+            },
+            deep: true
         }
     }
 }

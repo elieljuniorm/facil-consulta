@@ -4,12 +4,13 @@
 
     <h2 class="subtitulo">Dados do profissional</h2>
 
-    <b-form @submit.stop.prevent="onSubmit" class="formGrup">
+    <b-form @submit.prevent="submit" class="formGrup">
 
       <b-form-group id="example-input-group-1" label="Nome completo*" label-for="example-input-1" class="formBloco">
 
         <b-form-input id="example-input-1" name="example-input-1" v-model="$v.form.name.$model"
-          :state="validateState('name')" aria-describedby="input-1-live-feedback" class="inputIten" placeholder="Digite o nome completo"></b-form-input>
+          :state="validateState('name')" aria-describedby="input-1-live-feedback" class="inputIten"
+          placeholder="Digite o nome completo"></b-form-input>
 
 
         <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter pelo menos 3
@@ -18,7 +19,8 @@
 
       <b-form-group id="example-input-group-2" label="CPF*" label-for="example-input-2" class="formBloco">
         <b-form-input id="example-input-2" name="example-input-2" v-model="$v.form.cpf.$model"
-          :state="validateState('cpf')" aria-describedby="input-2-live-feedback" class="inputIten itenNumerico" placeholder="Digite um CPF" v-mask="'###.###.###-##'"></b-form-input>
+          :state="validateState('cpf')" aria-describedby="input-2-live-feedback" class="inputIten itenNumerico"
+          placeholder="Digite um CPF" v-mask="'###.###.###-##'"></b-form-input>
 
 
         <b-form-invalid-feedback id="input-2-live-feedback">Este é um campo obrigatório e deve ter 11 caracteres.
@@ -27,7 +29,8 @@
 
       <b-form-group id="example-input-group-3" label="Número de celular*" label-for="example-input-3" class="formBloco">
         <b-form-input id="example-input-3" name="example-input-3" v-model="$v.form.numero_celular.$model"
-          :state="validateState('numero_celular')" aria-describedby="input-3-live-feedback" class="inputIten itenNumerico" placeholder="(00) 0 0000-0000" v-mask="'(##) # ####-####'">
+          :state="validateState('numero_celular')" aria-describedby="input-3-live-feedback"
+          class="inputIten itenNumerico" placeholder="(00) 0 0000-0000" v-mask="'(##) # ####-####'">
         </b-form-input>
 
 
@@ -40,7 +43,8 @@
         <b-form-group id="example-input-group-4" label="Estado*" label-for="example-input-4" class="formBloco">
 
           <b-form-select id="example-input-4" name="example-input-4" v-model="$v.form.estado.$model" :options="estados"
-            :state="validateState('estado')" aria-describedby="input-4-live-feedback" class="selectIten">
+            text-field="nome" value-field="nome" :state="validateState('estado')"
+            aria-describedby="input-4-live-feedback" class="selectIten">
           </b-form-select>
 
           <b-form-invalid-feedback id="input-4-live-feedback">Este é um campo obrigatório e deve ter uma cidade
@@ -51,7 +55,8 @@
         <b-form-group id="example-input-group-5" label="Cidade*" label-for="example-input-5" class="formBloco">
 
           <b-form-select id="example-input-5" name="example-input-5" v-model="$v.form.cidade.$model" :options="cidades"
-            :state="validateState('cidade')" aria-describedby="input-5-live-feedback" class="selectIten">
+            text-field="nome" value-field="nome" :state="validateState('cidade')"
+            aria-describedby="input-5-live-feedback" class="selectIten">
           </b-form-select>
 
           <b-form-invalid-feedback id="input-2-live-feedback">Este é um campo obrigatório e deve ter um estado
@@ -68,7 +73,7 @@
 
       <!-- <b-button type="submit" variant="primary">Submit</b-button> -->
 
-      <Botao rota="/atendimento" label="PRÓXIMO" />
+      <Botao label="PRÓXIMO" />
 
     </b-form>
 
@@ -81,6 +86,7 @@ import { validationMixin } from "vuelidate";
 import { required, minLength, maxLength } from "vuelidate/lib/validators";
 import Botao from "./Botao.vue";
 import Progess from "./Progess.vue";
+import api from '@/components/api'
 
 export default {
   mixins: [validationMixin],
@@ -91,14 +97,10 @@ export default {
   data() {
     return {
       estados: [
-        { value: null, text: "Selecione" },
-        { value: "para", text: "Pará" },
-        { value: "maranhao", text: "Maranhão" }
+        { id: null, nome: "Selecione", sigla: null }
       ],
       cidades: [
-        { value: null, text: "Selecione" },
-        { value: "belem", text: "Belém" },
-        { value: "sao luis", text: "São Luis" }
+        { id: null, nome: "Selecione", estadoId: null }
       ],
       form: {
         name: null,
@@ -106,6 +108,10 @@ export default {
         numero_celular: null,
         estado: null,
         cidade: null,
+        especialista: null,
+        valor: null,
+        tipo_pagamento: [],
+        parcelamento: null
       }
     };
   },
@@ -138,8 +144,11 @@ export default {
 
     }
   },
+  created() {
+    this.getEstados();
+    this.getCidades();
+  },
   methods: {
-
     validateState(name) {
       const { $dirty, $error } = this.$v.form[name];
       return $dirty ? !$error : null;
@@ -160,14 +169,52 @@ export default {
       const { $dirty, $error } = this.$v.form[cidade];
       return $dirty ? !$error : null;
     },
-
-    onSubmit() {
+    submit() {
       this.$v.form.$touch();
       if (this.$v.form.$anyError) {
         return;
+      } else {
+        this.$router.push('/atendimento');
       }
+    },
+    getEstados() {
+      api
+        .get("/estados")
+
+        .then(resp => {
+           this.estados = this.estados.concat(resp.data);
+        })
+
+        .catch((error) => {
+          console.log(error);
+        })
+    },
+    getCidades() {
+      api
+        .get("/cidades")
+
+        .then(resp => {
+          this.cidades = this.cidades.concat(resp.data);
+        })
+
+        .catch((error) => {
+          console.log(error);
+        })
+    }
+  }, mounted() {
+    if (this.$session.get("form")) {
+      this.form = this.$session.get("form");
+    }
+  },
+  watch: {
+    'form': {
+      handler: function (_form) {
+        this.$session.set("form", _form);
+      },
+      deep: true
     }
   }
+
 };
 </script>
 

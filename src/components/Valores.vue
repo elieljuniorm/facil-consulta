@@ -4,7 +4,7 @@
 
     <h2 class="subtitulo">Dados do profissional</h2>
 
-    <b-form @submit.stop.prevent="onSubmit" class="formGrup">
+    <b-form @submit.prevent="submit" class="formGrup">
 
       <b-form-group id="example-input-group-1" label="Especialidade*" label-for="example-input-1" class="especilidade">
 
@@ -36,7 +36,7 @@
       <Pagamento />
 
       <!-- <b-button type="submit" variant="primary">Submit</b-button> -->
-      <Botao rota="/revisao" label="PRÓXIMO" />
+      <Botao label="PRÓXIMO" />
 
     </b-form>
 
@@ -45,7 +45,7 @@
       <span class="spanProgress">2 de 2</span>
     </div>
 
-    
+
 
   </div>
 </template>
@@ -72,8 +72,15 @@ export default {
         { value: "fisioterapeuta", text: "Fisioterapeuta" }
       ],
       form: {
+        name: null,
+        cpf: null,
+        numero_celular: null,
+        estado: null,
+        cidade: null,
         especialista: null,
         valor: null,
+        tipo_pagamento: [],
+        parcelamento: null
       }
     };
   },
@@ -99,11 +106,26 @@ export default {
       const { $dirty, $error } = this.$v.form[especialista];
       return $dirty ? !$error : null;
     },
-    onSubmit() {
+    submit() {
       this.$v.form.$touch();
       if (this.$v.form.$anyError) {
         return;
+      } else {
+        this.$router.push('/revisao');
       }
+    }
+  }, 
+  mounted() {
+    if (this.$session.get("form")) {
+      this.form = this.$session.get("form");
+    }
+  },
+  watch: {
+    'form': {
+      handler: function (_form) {
+        this.$session.set("form", _form);
+      },
+      deep: true
     }
   }
 };

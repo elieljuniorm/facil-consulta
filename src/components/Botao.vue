@@ -1,7 +1,6 @@
 <template>
     <div class="container">
-        <b-button type="submit" variant="primary" class="btn btn-primary">
-            <router-link :to="rota" class="label">{{ label }}</router-link>
+        <b-button type="submit" variant="primary" class="btn btn-primary">{{ label }}
         </b-button>
     </div>
 </template>
@@ -10,13 +9,12 @@
 export default {
     name: 'Botao',
     props: {
-        rota: {
-            type: String
-        },
         label: {
             type: String
         }
-    }
+    }, methods: {
+
+    },
 }
 </script>
 
@@ -60,10 +58,11 @@ export default {
         width: 30em;
 
     }
+
     .container {
-    padding-bottom: 2em;
-    text-align: left;
-    margin-left: 0;
-}
+        padding-bottom: 2em;
+        text-align: left;
+        margin-left: 0;
+    }
 }
 </style>
