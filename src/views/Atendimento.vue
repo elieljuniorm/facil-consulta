@@ -1,6 +1,6 @@
 <template>
   <div class="atendimento">
-   
+
     <BotaoSeta rota="/" label="<" />
     <Valores />
     <div class="foto"></div>
@@ -33,7 +33,7 @@ export default {
   padding: .7em 1em 0 1em;
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
   .atendimento {
     width: 70em;
     height: 50em;
@@ -41,15 +41,79 @@ export default {
     margin: 5em auto;
     padding: 1em 2em 0 4em;
   }
-   .foto {
+
+  .foto {
     background-image: url(https://github.com/elielm14/facil-consulta/blob/master/src/assets/desktop-pagina-2.png?raw=true);
     background-repeat: repeat;
     background-size: cover;
     width: 34em;
-    height: 25em;
-    position: relative;
-    top: -33em;
-    left: 31em;
+    height: 24em;
+    position: absolute;
+    top: 16em;
+    left: 36em;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1299px) {
+  .atendimento {
+    width: 70em;
+    height: 50em;
+    border-radius: 40px;
+    margin: 5em auto;
+    padding: 1em 2em 0 4em;
+  }
+
+  .foto {
+    background-image: url(https://github.com/elielm14/facil-consulta/blob/master/src/assets/desktop-pagina-2.png?raw=true);
+    background-repeat: repeat;
+    background-size: cover;
+    width: 33em;
+    height: 23em;
+    position: absolute;
+    top: 16em;
+    left: 39em;
+  }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1399px) {
+  .atendimento {
+    width: 70em;
+    height: 50em;
+    border-radius: 40px;
+    margin: 5em auto;
+    padding: 1em 2em 0 4em;
+  }
+
+  .foto {
+    background-image: url(https://github.com/elielm14/facil-consulta/blob/master/src/assets/desktop-pagina-2.png?raw=true);
+    background-repeat: repeat;
+    background-size: cover;
+    width: 33em;
+    height: 23em;
+    position: absolute;
+    top: 16em;
+    left: 42em;
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1440px) {
+  .atendimento {
+    width: 70em;
+    height: 50em;
+    border-radius: 40px;
+    margin: 5em auto;
+    padding: 1em 2em 0 4em;
+  }
+
+  .foto {
+    background-image: url(https://github.com/elielm14/facil-consulta/blob/master/src/assets/desktop-pagina-2.png?raw=true);
+    background-repeat: repeat;
+    background-size: cover;
+    width: 33em;
+    height: 23em;
+    position: absolute;
+    top: 16em;
+    left: 45em;
   }
 }
 </style>
