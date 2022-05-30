@@ -39,7 +39,7 @@
             <Botao label="CADASTRAR PROFISSIONAL" class="btnComponente"/><br>
         </div>
         <div>
-            <BotaoSeta rota="/" label="Editar cadastro" class="botaoEdit" />
+            <BotaoSeta rota="/" label="Editar cadastro" />
         </div>
 
     </b-form>
@@ -83,25 +83,24 @@ export default {
     font-family: var(--fonte-padrao-conforta);
     font-weight: bold;
     color: var(--cor-letra-titulo);
-    padding: .5em auto -3em auto !important;
-}
-.btnComponente{
-    background-color: yellow !important;
-    border-radius: 40px;
-    height: 3em;
-    width: 22em;
-    /* color: black; */
+    padding: .5em 0 1em 0;
 }
 .textFixo {
     font-weight: bold;
 }
-
 .textFixo,
 .textVariavel {
     font-family: var(--fonte-padrao-open);
     margin: 0;
     padding-bottom: 1em;
     font-size: 1.2em;
+    text-align: left;
+}
+.btnComponente{
+    background-color: yellow !important;
+    border-radius: 40px;
+    height: 3em;
+    width: 20em;
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {}

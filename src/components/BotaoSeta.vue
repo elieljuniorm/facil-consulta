@@ -1,9 +1,9 @@
 <template>
     <div>
         <router-link :to="rota">
-            <b-button type="submit" variant="primary" class="btn btn-primary">
+            <button type="submit" class="btnSeta">
                 {{ label }}
-            </b-button>
+            </button>
         </router-link>
     </div>
 </template>
@@ -20,9 +20,8 @@ export default {
     }
 }
 </script>
-<style scoped>
-.btn.btn-primary,
-.btn.btn-primary:hover {
+<style>
+.btnSeta{
     background-color: unset;
     border-color: unset;
     border: none;
