@@ -43,8 +43,15 @@
         <b-form-group id="example-input-group-4" label="Estado*" label-for="example-input-4" class="formBloco">
 
           <b-form-select id="example-input-4" name="example-input-4" v-model="$v.form.estado.$model" :options="estados"
-            text-field="nome" value-field="nome" :state="validateState('estado')"
+            text-field="nome" value-field="nome" :state="validateState('estado')" @change="getCidades()"
             aria-describedby="input-4-live-feedback" class="selectIten">
+
+            <template #first>
+
+              <b-form-select-option :value="null" disabled>Selecione</b-form-select-option>
+
+            </template>
+
           </b-form-select>
 
           <b-form-invalid-feedback id="input-4-live-feedback">Este é um campo obrigatório e deve ter uma cidade
@@ -57,6 +64,13 @@
           <b-form-select id="example-input-5" name="example-input-5" v-model="$v.form.cidade.$model" :options="cidades"
             text-field="nome" value-field="nome" :state="validateState('cidade')"
             aria-describedby="input-5-live-feedback" class="selectIten">
+
+            <template #first>
+
+              <b-form-select-option :value="null" disabled>Selecione</b-form-select-option>
+
+            </template>
+
           </b-form-select>
 
           <b-form-invalid-feedback id="input-2-live-feedback">Este é um campo obrigatório e deve ter um estado
@@ -96,12 +110,8 @@ export default {
   },
   data() {
     return {
-      estados: [
-        { id: null, nome: "Selecione", sigla: null }
-      ],
-      cidades: [
-        { id: null, nome: "Selecione", estadoId: null }
-      ],
+      estados: [],
+      cidades: [],
       form: {
         name: null,
         cpf: null,
@@ -146,7 +156,6 @@ export default {
   },
   created() {
     this.getEstados();
-    this.getCidades();
   },
   methods: {
     validateState(name) {
@@ -170,19 +179,34 @@ export default {
       return $dirty ? !$error : null;
     },
     submit() {
-      this.$v.form.$touch();
-      if (this.$v.form.$anyError) {
-        return;
-      } else {
-        this.$router.push('/atendimento');
-      }
+      this.verificaCPF();
+    },
+    verificaCPF(){
+      api
+        .get("/profissionais?cpf="+this.form.cpf.replace(/[^0-9]/g,''))
+
+        .then(resp => {
+          
+          this.$v.form.$touch();
+          if (this.$v.form.$anyError || resp.data.length != 0) {
+            return;
+          } else {
+            this.$router.push('/atendimento');
+          }
+          
+        })
+
+        .catch((error) => {
+          console.log(error);
+          return false;
+        })
     },
     getEstados() {
       api
         .get("/estados")
 
         .then(resp => {
-           this.estados = this.estados.concat(resp.data);
+          this.estados = resp.data;
         })
 
         .catch((error) => {
@@ -190,20 +214,24 @@ export default {
         })
     },
     getCidades() {
-      api
-        .get("/cidades")
+      if (this.form.estado) {
+        api
+          .get("/estados?nome=" + this.form.estado + "&_embed=cidades")
 
-        .then(resp => {
-          this.cidades = this.cidades.concat(resp.data);
-        })
+          .then(resp => {
+            this.cidades = resp.data[0].cidades;
+          })
 
-        .catch((error) => {
-          console.log(error);
-        })
+          .catch((error) => {
+            console.log(error);
+          })
+      }
     }
   }, mounted() {
     if (this.$session.get("form")) {
       this.form = this.$session.get("form");
+      this.estados = this.$session.get("estados");
+      this.cidades = this.$session.get("cidades");
     }
   },
   watch: {
@@ -212,7 +240,17 @@ export default {
         this.$session.set("form", _form);
       },
       deep: true
-    }
+    },
+    'estados': {
+      handler: function (_estados) {
+        this.$session.set("estados", _estados);
+      }
+    },
+    'cidades': {
+      handler: function (_cidades) {
+        this.$session.set("cidades", _cidades);
+      }
+    },
   }
 
 };

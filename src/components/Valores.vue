@@ -9,8 +9,15 @@
       <b-form-group id="example-input-group-1" label="Especialidade*" label-for="example-input-1" class="especilidade">
 
         <b-form-select id="example-input-1" name="example-input-1" v-model="$v.form.especialista.$model"
-          :options="especialista" :state="validateState('especialista')" aria-describedby="input-1-live-feedback"
-          class="selectOpt">
+          :options="especialidades" text-field="nome" value-field="nome" :state="validateState('especialista')"
+          aria-describedby="input-1-live-feedback" class="selectOpt">
+
+          <template #first>
+
+            <b-form-select-option :value="null" disabled>Selecione</b-form-select-option>
+
+          </template>
+
         </b-form-select>
 
         <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter uma especialidade
@@ -56,6 +63,7 @@ import { required, between, maxLength } from "vuelidate/lib/validators";
 import Botao from "./Botao.vue";
 import Progess from "./Progess.vue";
 import Pagamento from "./Pagamento.vue";
+import api from '@/components/api'
 
 export default {
   mixins: [validationMixin],
@@ -66,11 +74,7 @@ export default {
   },
   data() {
     return {
-      especialista: [
-        { value: null, text: "Selecione a especialidade" },
-        { value: "cardiologista", text: "Cardiologista" },
-        { value: "fisioterapeuta", text: "Fisioterapeuta" }
-      ],
+      especialidades: [],
       form: {
         name: null,
         cpf: null,
@@ -96,6 +100,9 @@ export default {
       }
     }
   },
+  created() {
+    this.getEspecialidades();
+  },
   methods: {
 
     validateState(valor) {
@@ -113,8 +120,20 @@ export default {
       } else {
         this.$router.push('/revisao');
       }
-    }
-  }, 
+    },
+    getEspecialidades() {
+      api
+        .get("/especialidades")
+
+        .then(resp => {
+          this.especialidades = resp.data;
+        })
+
+        .catch((error) => {
+          console.log(error);
+        })
+    },
+  },
   mounted() {
     if (this.$session.get("form")) {
       this.form = this.$session.get("form");
