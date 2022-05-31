@@ -83,7 +83,6 @@ export default {
 
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
     .container {
-        width: 57%;
         text-align: center;
     }
 
