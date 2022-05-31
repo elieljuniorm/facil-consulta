@@ -25,11 +25,9 @@ export default {
     background-color: unset;
     border-color: unset;
     border: none;
-    /* margin-top: -8em; */
 }
 
 button {
-    color: #483698;
     text-decoration: unset;
     color: var(--cor-letra-titulo);
     font-family: var(--fonte-padrao-conforta);

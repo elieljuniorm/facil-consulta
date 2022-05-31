@@ -51,7 +51,7 @@ export default {
     width: 34em;
     height: 24em;
     position: absolute;
-    top: 16em;
+    top: 22em;
     left: 36em;
   }
 }
@@ -72,7 +72,7 @@ export default {
     width: 33em;
     height: 23em;
     position: absolute;
-    top: 16em;
+    top: 22em;
     left: 39em;
   }
 }
@@ -93,7 +93,7 @@ export default {
     width: 33em;
     height: 23em;
     position: absolute;
-    top: 16em;
+    top: 22em;
     left: 42em;
   }
 }
@@ -114,7 +114,7 @@ export default {
     width: 33em;
     height: 23em;
     position: absolute;
-    top: 16em;
+    top: 22em;
     left: 45em;
   }
 }

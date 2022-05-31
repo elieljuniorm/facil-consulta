@@ -38,7 +38,7 @@
         <div>
             <Botao label="CADASTRAR PROFISSIONAL" class="btnComponente"/><br>
         </div>
-        <div>
+        <div class="botaoVolta">
             <BotaoSeta rota="/" label="Editar cadastro" />
         </div>
 
@@ -96,12 +96,23 @@ export default {
     font-size: 1.2em;
     text-align: left;
 }
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style:none
+}
 .btnComponente{
     background-color: yellow !important;
+    color: black !important;
     border-radius: 40px;
     height: 3em;
     width: 20em;
+    margin: 2em auto 0 auto;
 }
-
-@media only screen and (min-width: 1024px) and (max-width: 1440px) {}
+.botaoVolta{
+    text-align: center;
+    margin-bottom: 1em;
+}
 </style>

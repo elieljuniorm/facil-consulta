@@ -286,6 +286,7 @@ export default {
 }
 label{
   margin-bottom: 1em;
+  display: block;
 }
 .inputIten {
   border-radius: 5px;
