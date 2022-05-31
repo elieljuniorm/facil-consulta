@@ -2,6 +2,8 @@
 
 Foi desenvolvido o Front-end de um Cadastro de Profissional da Saúde (médico), para o teste técnico da empresa Fácil Consulta.
 
+![pagina-1](https://user-images.githubusercontent.com/79880373/171074530-3fd2c8b0-b3d1-47d0-9d89-ecb35c3b5e5f.png)
+
 ## Recursos Utilizados 🚀
 
 * **[Node.js](https://nodejs.org/en/)**
