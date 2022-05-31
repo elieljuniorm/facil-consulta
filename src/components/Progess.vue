@@ -4,19 +4,19 @@
 
 <script>
 export default {
-     name: 'Progess',
-     props:
+    name: 'Progess',
+    props:
     {
         etapa: {
             type: Number,
         }
     }
-    
+
 }
 </script>
 
 <style>
 .progress .progress-bar {
-    background: #483698;
+    background: var(--cor-letra-titulo);
 }
 </style>

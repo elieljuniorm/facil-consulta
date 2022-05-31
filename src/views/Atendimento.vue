@@ -1,6 +1,6 @@
 <template>
   <div class="atendimento">
-    <BotaoSeta rota="/" label="<" class="btnSeta"/>
+    <BotaoSeta rota="/" label="<" class="btnSeta" />
     <Valores />
     <div class="foto"></div>
   </div>
@@ -21,7 +21,7 @@ export default {
 
 <style scoped>
 .atendimento {
-  background: white;
+  background: var(--cor-letra-branca);
   border-top-right-radius: 40px;
   border-top-left-radius: 40px;
   width: 100%;
@@ -31,7 +31,8 @@ export default {
   box-shadow: 5px 5px 10px rgb(0 0 0 / 57%);
   padding: .7em 1em 0 1em;
 }
-.btnSeta{
+
+.btnSeta {
   margin: -3.5em .5em 3.5em 1em;
 }
 

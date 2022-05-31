@@ -3,13 +3,16 @@
         <b-collapse id="parcelamento" v-model="visivel" class="selectIten">
 
             <b-form-group label="Parcelamento em" v-slot="{ ariaDescribedby }" class="pacelas">
-                <b-form-radio v-model="form.parcelamento" :aria-describedby="ariaDescribedby" name="some-radios" value="1">
+                <b-form-radio v-model="form.parcelamento" :aria-describedby="ariaDescribedby" name="some-radios"
+                    value="1">
                     <p class="descricao">1x, sem juros</p>
                 </b-form-radio>
-                <b-form-radio v-model="form.parcelamento" :aria-describedby="ariaDescribedby" name="some-radios" value="2">
+                <b-form-radio v-model="form.parcelamento" :aria-describedby="ariaDescribedby" name="some-radios"
+                    value="2">
                     <p class="descricao">2x, sem juros</p>
                 </b-form-radio>
-                <b-form-radio v-model="form.parcelamento" :aria-describedby="ariaDescribedby" name="some-radios" value="3">
+                <b-form-radio v-model="form.parcelamento" :aria-describedby="ariaDescribedby" name="some-radios"
+                    value="3">
                     <p class="descricao">3x, sem juros</p>
                 </b-form-radio>
             </b-form-group>
@@ -59,7 +62,7 @@ export default {
 
 <style scoped>
 .selectIten {
-    background: #F9F9F9;
+    background: var(--cor-sombra-select);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     box-shadow: 1px 1px 1px 0px var(--cor-sombra);

@@ -179,19 +179,19 @@ export default {
     submit() {
       this.verificaCPF();
     },
-    verificaCPF(){
+    verificaCPF() {
       api
-        .get("/profissionais?cpf="+this.form.cpf.replace(/[^0-9]/g,''))
+        .get("/profissionais?cpf=" + this.form.cpf.replace(/[^0-9]/g, ''))
 
         .then(resp => {
-          
+
           this.$v.form.$touch();
           if (this.$v.form.$anyError || resp.data.length != 0) {
             return;
           } else {
             this.$router.push('/atendimento');
           }
-          
+
         })
 
         .catch((error) => {
@@ -261,6 +261,7 @@ export default {
   color: var(--cor-letra-titulo);
   padding-top: 0.5em;
 }
+
 .subtitulo {
   font-family: var(--fonte-padrao-open);
   font-size: 1.3em;
@@ -276,6 +277,7 @@ export default {
 .formBloco {
   padding: 1em 0;
 }
+
 .containerLocalidade {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -284,10 +286,12 @@ export default {
   justify-content: center;
   margin: auto;
 }
-label{
+
+label {
   margin-bottom: 1em;
   display: block;
 }
+
 .inputIten {
   border-radius: 5px;
   border: 2px solid;
@@ -297,6 +301,7 @@ label{
   color: var(--cor-select);
   margin-top: 1em;
 }
+
 .selectIten {
   width: 11em;
   height: 2.5em;
@@ -307,9 +312,11 @@ label{
   color: var(--cor-select);
   padding-left: .6em;
 }
-.btnComponente{
-  background-color: #483698;
+
+.btnComponente {
+  background-color: var(--cor-letra-titulo);
 }
+
 .containerProgess {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -362,7 +369,8 @@ label{
   .itenNumerico {
     width: 20em;
   }
-  .inputIten{
+
+  .inputIten {
     margin: 0.5em 0 0 0;
   }
 

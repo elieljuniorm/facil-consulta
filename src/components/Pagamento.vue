@@ -3,7 +3,7 @@
     <div>
 
         <b-form-group v-slot="{ ariaDescribedby }">
-            <label>Formas de pagamento*</label>
+            <label>Formas de pagamento da consulta*</label>
             <b-form-checkbox v-for="option in options" v-model="form.tipo_pagamento" :key="option.value"
                 :value="option.text" :aria-describedby="ariaDescribedby" name="flavour-3a" class="selectIten">
                 <span class="spanText">{{ option.text }}</span>
@@ -59,7 +59,7 @@ export default {
 
 <style scoped>
 .selectIten {
-    background: #F9F9F9;
+    background: var(--cor-sombra-select);
     border-radius: 5px;
     box-shadow: 1px 1px 1px 0px var(--cor-sombra);
     margin: 1em 0;
@@ -72,7 +72,8 @@ export default {
     font-weight: 600;
     font-family: var(--fonte-padrao-open);
 }
-label{
+
+label {
     margin: 1em 0;
 }
 </style>

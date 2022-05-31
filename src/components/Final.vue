@@ -31,17 +31,19 @@ export default {
 }
 
 .botao {
-    background-color: #483698;
+    background-color: var(--cor-letra-titulo);
     border-color: unset;
     border-radius: 40px;
     border: unset;
     height: 3em;
     width: 15em;
 }
-.link{
+
+.link {
     text-decoration: unset;
     color: #FFFF
 }
+
 .titulo {
     font-family: var(--fonte-padrao-conforta);
     font-weight: bold;
@@ -88,7 +90,8 @@ export default {
     .subtitulo {
         text-align: center;
     }
-    .botao{
+
+    .botao {
         text-align: center;
     }
 }

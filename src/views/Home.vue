@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 .home {
-  background: white;
+  background: var(--cor-letra-branca);
   border-top-right-radius: 40px;
   border-top-left-radius: 40px;
   width: 100%;

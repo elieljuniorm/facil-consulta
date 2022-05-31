@@ -1,6 +1,6 @@
 <template>
   <div class="finalizado">
-    <Final/>
+    <Final />
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
 </script>
 <style scoped>
 .finalizado {
-   background: white;
+  background: var(--cor-letra-branca);
   border-top-right-radius: 40px;
   border-top-left-radius: 40px;
   width: 100%;
@@ -22,8 +22,9 @@ export default {
   box-shadow: 5px 5px 10px rgb(0 0 0 / 57%);
   padding: 0.7em 1em 0 1em
 }
-@media only screen and (min-width: 1024px) and (max-width: 1440px){
-  .finalizado{
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+  .finalizado {
     width: 40em;
     height: 40em;
     border-radius: 40px;

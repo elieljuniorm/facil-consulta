@@ -29,18 +29,22 @@
         <p class="textFixo">Formas de pagamento da consulta</p>
 
         <p class="textVariavel">
+
         <ul id="formas_pagamentos">
-            <li v-for="item in form.tipo_pagamento" :key="item">{{ item }}<span v-if="item == 'Cartão de crédito'">&nbsp;-
-                    Parcelamento em {{ form.parcelamento }}x sem juros</span></li>
+
+            <li v-for="item in form.tipo_pagamento" :key="item">{{ item }}
+                <span v-if="item == 'Cartão de crédito'">&nbsp;- Parcelamento em {{ form.parcelamento }}x sem
+                    juros</span>
+            </li>
+
         </ul>
+
         </p>
 
-        <div>
-            <Botao label="CADASTRAR PROFISSIONAL" class="btnComponente"/><br>
-        </div>
-        <div class="botaoVolta">
-            <BotaoSeta rota="/" label="Editar cadastro" />
-        </div>
+
+        <Botao label="CADASTRAR PROFISSIONAL" class="btnComponente" />
+
+        <BotaoSeta rota="/" label="Editar cadastro" class="botaoVolta" />
 
     </b-form>
 </template>
@@ -85,9 +89,11 @@ export default {
     color: var(--cor-letra-titulo);
     padding: .5em 0 1em 0;
 }
+
 .textFixo {
     font-weight: bold;
 }
+
 .textFixo,
 .textVariavel {
     font-family: var(--fonte-padrao-open);
@@ -96,15 +102,18 @@ export default {
     font-size: 1.2em;
     text-align: left;
 }
-ul{
+
+ul {
     margin: 0;
     padding: 0;
 }
-li{
-    list-style:none
+
+li {
+    list-style: none
 }
-.btnComponente{
-    background-color: yellow !important;
+
+.btnComponente {
+    background-color: var(--cor-botao-cadastro) !important;
     color: black !important;
     border-radius: 40px;
     height: 3em;
@@ -112,11 +121,9 @@ li{
     margin: 2em auto 0 auto;
     padding: 0 0.8em 0 0;
 }
-.botaoVolta{
+
+.botaoVolta {
     text-align: center;
-    margin-bottom: 1em;
-}
-.btnComponente{
-    color: black !important;
+    margin: 2em 0 1em 0;
 }
 </style>

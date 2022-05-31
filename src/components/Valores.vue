@@ -6,7 +6,8 @@
 
     <b-form @submit.prevent="submit" class="formGrup">
 
-      <b-form-group id="example-input-group-1" label="Especialidade*" label-for="example-input-1" class="especilidade">
+      <b-form-group id="example-input-group-1" label="Especialidade principal*" label-for="example-input-1"
+        class="especilidade">
 
         <b-form-select id="example-input-1" name="example-input-1" v-model="$v.form.especialista.$model"
           :options="especialidades" text-field="nome" value-field="nome" :state="validateState('especialista')"
@@ -25,13 +26,14 @@
 
       </b-form-group>
 
-      <b-form-group id="example-input-group-1" label="Valor da consulta*" label-for="example-input-1" class="valorConsulta">
+      <b-form-group id="example-input-group-1" label="Informe o preço da consulta*" label-for="example-input-1"
+        class="valorConsulta">
 
         <b-input-group prepend="R$">
 
           <b-form-input min='0' type="number" id="example-input-1" name="example-input-1" v-model="$v.form.valor.$model"
             :state="validateState('valor')" aria-describedby="input-1-live-feedback" class="itenNumerico"
-            placeholder="Valor" ></b-form-input>
+            placeholder="Valor"></b-form-input>
 
           <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter um valor mínimo de
             R$ 30,00 e máximo de R$ 350,00.
@@ -156,7 +158,7 @@ export default {
 }
 
 .btnComponente {
-  background-color: #483698;
+  background-color: var(--cor-letra-titulo);
 }
 
 .subtitulo {
@@ -195,13 +197,14 @@ export default {
   flex-direction: row-reverse;
   margin: 1em 0;
 }
-.input-group{
+
+.input-group {
   margin: 1em 0 1.5em 0;
 }
 
 .input-group-text {
   background-color: var(--cor-letra-titulo);
-  color: #ffff;
+  color: var(--cor-letra-branca);
   padding: 0.5em;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -272,6 +275,7 @@ export default {
   .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
     height: 2.97em;
   }
+
   .input-group-text {
     padding: .61em;
   }

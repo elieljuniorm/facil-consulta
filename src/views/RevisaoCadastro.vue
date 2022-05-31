@@ -1,6 +1,6 @@
 <template>
   <div class="revisaoCadastro">
-    <BotaoSeta rota="/atendimento" label="<" class="btnSeta"/>
+    <BotaoSeta rota="/atendimento" label="<" class="btnSeta" />
     <Revisao />
     <div class="foto"></div>
   </div>
@@ -16,7 +16,7 @@ export default {
 
 <style scoped>
 .revisaoCadastro {
-  background: white;
+  background: var(--cor-letra-branca);
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   width: 100%;
@@ -26,7 +26,8 @@ export default {
   box-shadow: 5px 5px 10px rgb(0 0 0 / 57%);
   padding: 0.7em 1em 1em 1em
 }
-.btnSeta{
+
+.btnSeta {
   margin: -3.5em .5em 3.5em 1em;
 }
 

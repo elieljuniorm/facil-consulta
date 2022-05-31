@@ -21,7 +21,7 @@ export default {
 }
 </script>
 <style>
-.btnSeta{
+.btnSeta {
     background-color: unset;
     border-color: unset;
     border: none;
