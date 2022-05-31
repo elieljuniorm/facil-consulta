@@ -12,6 +12,7 @@ Foi desenvolvido o Front-end de um Cadastro de Profissional da Saúde (médico),
 * **[Bootstrap-Vue](https://bootstrap-vue.org/)**
 * **[Axios](https://www.npmjs.com/package/vue-axios)**
 * **[Vuelidate](https://vuelidate.js.org/#sub-basic-usage)**
+* **[Vue-sessionstorage](https://www.npmjs.com/package/vue-sessionstorage)**
 
 ## Executando Localmente o Projeto 🔥
 
