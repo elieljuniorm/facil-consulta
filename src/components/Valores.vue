@@ -31,7 +31,7 @@
 
           <b-form-input min='0' type="number" id="example-input-1" name="example-input-1" v-model="$v.form.valor.$model"
             :state="validateState('valor')" aria-describedby="input-1-live-feedback" class="itenNumerico"
-            placeholder="Valor"></b-form-input>
+            placeholder="Valor" ></b-form-input>
 
           <b-form-invalid-feedback id="input-1-live-feedback">Este é um campo obrigatório e deve ter um valor mínimo de
             R$ 30,00 e máximo de R$ 350,00.
@@ -270,10 +270,10 @@ export default {
   }
 
   .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
-    height: 2.98em;
+    height: 2.97em;
   }
   .input-group-text {
-    padding: .64em;
+    padding: .61em;
   }
 
   .containerProgess {

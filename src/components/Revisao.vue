@@ -110,9 +110,13 @@ li{
     height: 3em;
     width: 20em;
     margin: 2em auto 0 auto;
+    padding: 0 0.8em 0 0;
 }
 .botaoVolta{
     text-align: center;
     margin-bottom: 1em;
+}
+.btnComponente{
+    color: black !important;
 }
 </style>
