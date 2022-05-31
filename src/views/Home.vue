@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Cadastro from '@/components/Cadastro.vue'
+import Cadastro from '@/components/pagina-um/Cadastro.vue'
 
 export default {
   name: 'Home',

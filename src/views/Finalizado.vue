@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Final from "@/components/Final.vue";
+import Final from "@/components/pagina-quatro/Final.vue";
 export default {
   components: { Final },
 };

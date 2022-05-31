@@ -59,10 +59,10 @@
 <script>
 import { validationMixin } from "vuelidate";
 import { required, between, maxLength } from "vuelidate/lib/validators";
-import Botao from "./Botao.vue";
-import Progess from "./Progess.vue";
-import Pagamento from "./Pagamento.vue";
-import api from '@/components/api'
+import Botao from "@/components/Botao.vue";
+import Progess from "@/components/Progess.vue";
+import Pagamento from "@/components/pagina-dois/Pagamento.vue";
+import api from '@/components/api/api'
 
 export default {
   mixins: [validationMixin],

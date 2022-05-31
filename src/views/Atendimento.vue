@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Valores from '@/components/Valores.vue'
+import Valores from '@/components/pagina-dois/Valores.vue'
 import BotaoSeta from "@/components/BotaoSeta.vue";
 
 export default {

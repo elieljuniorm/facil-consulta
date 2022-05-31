@@ -8,7 +8,7 @@
 
 <script>
 import BotaoSeta from "@/components/BotaoSeta.vue";
-import Revisao from "@/components/Revisao.vue";
+import Revisao from "@/components/pagina-tres/Revisao";
 export default {
   components: { BotaoSeta, Revisao },
 };

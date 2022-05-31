@@ -51,7 +51,7 @@
 
 <script>
 import Botao from "@/components/Botao.vue"
-import BotaoSeta from "./BotaoSeta.vue"
+import BotaoSeta from "@/components/BotaoSeta.vue"
 export default {
     components: { Botao, BotaoSeta },
     data() {

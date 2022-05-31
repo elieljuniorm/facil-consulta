@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Parcelamento from './Parcelamento.vue'
+import Parcelamento from '@/components/pagina-dois/parcelas/Parcelamento'
 export default {
     data() {
         return {
